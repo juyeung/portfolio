@@ -52,3 +52,11 @@
 
 ---
 
+## 🧰 기술 스택
+
+<img src="https://skillicons.dev/icons?i=html,css,js,figma,github,vscode&quot; />
+
+---
+
+> 포트폴리오를 더 보고 싶다면 👉 [yourname.dothome.co.kr](http://yuniyuni.dothome.co.kr/) 방문해주세요!
+
