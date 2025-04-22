@@ -2,9 +2,10 @@
   <img src="">
 </p>
 
-<h1 align="center">안녕하세요! 👋</h1>
-
-<p align="center">배려와 공감을 바탕으로 삶을 아름답게 만드는 UX/UI 디자이너 김주영 입니다.
+<h1 align="center">안녕하세요! 👋 UX/UI 디자이너 김주영 입니다.</h1>
+<h2>내가 생각하는 <b color="#f00">디자인이란?</b></h2>
+<p align="center">
+  배려와 공감을 바탕으로(문제발견) 삶을 아름답게 만드는것(문제해결)
 </p>
 
 ## 🔗 Portfolio 메인 링크
