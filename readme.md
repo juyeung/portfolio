@@ -20,7 +20,7 @@
 - 사용 기술: HTML5, CSS3, JavaScript
 - 주요 기능: 예약 시스템, 달력, 반응형 디자인 ( mainpage )
 - GitHub: [🔗 바로가기](https://juyeung.github.io/study310/project001/index.html)
-- GitHubCODE: [🔗 바로가기](https://github.com/username/myblog)
+- GitHubCODE: [🔗 바로가기](https://github.com/juyeung/study310/blob/main/project001/index.html)
 
 ---
 
