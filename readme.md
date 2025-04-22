@@ -12,3 +12,43 @@
 [📂포트폴리오 전체 보기](http://jijumto.dothome.co.kr/)
 ---
 
+## 🛠️ 진행한 프로젝트
+
+### 1. 📌 **프로젝트1 대전아쿠아리움**
+> 공공기관리뉴얼웹사이트
+
+- 사용 기술: HTML5, CSS3, JavaScript
+- 주요 기능: 예약시스템, 달력, 반응형 디자인 ( mainpage )
+- GitHub: [🔗 바로가기](https://github.com/username/myblog)
+- GitHubCODE: [🔗 바로가기](https://github.com/username/myblog)
+
+---
+
+### 2. 📌 **프로젝트2**
+> 제품중심신규웹사이트
+
+- 사용 기술: HTML, CSS, JavaScript
+- 주요 기능: 장바구니기능, 네이버API활용로그인 ( mainpage  + subpage2)
+- GitHub: [🔗 바로가기](https://github.com/username/todolist)
+- GitHubCODE: [🔗 바로가기](https://github.com/username/myblog)
+
+---
+
+### 3. 📌 **프로젝트3**
+> 인물형팬페이지
+
+- 사용 기술: HTML, CSS
+- 특징: 부드러운 스크롤 , ( mainpage  + subpage4)
+- GitHub: [🔗 바로가기](https://github.com/username/miniprofile)
+- GitHubCODE: [🔗 바로가기](https://github.com/username/myblog)
+
+---
+
+## 👩‍💻 About Me
+
+- 🔭 현재 웹디자인& 프론트엔드 공부 중!
+- 🌱 UIUX 기획과 Html,Css,JavaScript 에집중하고 있어요.
+- 📫 연락: your.email@example.com
+
+---
+
