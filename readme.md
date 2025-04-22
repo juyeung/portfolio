@@ -54,7 +54,7 @@
 
 ## 🧰 기술 스택
 
-<p><img src="https://skillicons.dev/icons?i=html,css,js,figma,photoshop,illustrator,github,vscode&quot; /></p>
+<img src="https://skillicons.dev/icons?i=html,css,js,figma,photoshop,illustrator,github,vscode&quot;/>
 
 ---
 
