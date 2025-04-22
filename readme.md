@@ -15,31 +15,31 @@
 ## 🛠️ 진행한 프로젝트
 
 ### 1. 📌 **프로젝트1 대전아쿠아리움**
-> 공공기관리뉴얼웹사이트
+> 공공기관리뉴얼 웹사이트 리뉴얼
 
 - 사용 기술: HTML5, CSS3, JavaScript
-- 주요 기능: 예약시스템, 달력, 반응형 디자인 ( mainpage )
+- 주요 기능: 예약 시스템, 달력, 반응형 디자인 ( mainpage )
 - GitHub: [🔗 바로가기](https://juyeung.github.io/study310/project001/index.html)
 - GitHubCODE: [🔗 바로가기](https://github.com/username/myblog)
 
 ---
 
-### 2. 📌 **프로젝트2**
-> 제품중심신규웹사이트
+### 2. 📌 **프로젝트2 프링글스**
+> 제품중심 웹사이트 리뉴얼
 
-- 사용 기술: HTML, CSS, JavaScript
-- 주요 기능: 장바구니기능, 네이버API활용로그인 ( mainpage  + subpage2)
-- GitHub: [🔗 바로가기](https://github.com/username/todolist)
+- 사용 기술: HTML5, CSS3, JavaScript
+- 주요 기능: 장바구니 기능, 네이버API활용 로그인 ( mainpage  + subpage4)
+- GitHub: [🔗 바로가기](https://juyeung.github.io/study310/project002/index.html)
 - GitHubCODE: [🔗 바로가기](https://github.com/username/myblog)
 
 ---
 
-### 3. 📌 **프로젝트3**
-> 인물형팬페이지
+### 3. 📌 **프로젝트3 더 퍼스트 슬램덩크**
+> 미디어형 팬페이지
 
-- 사용 기술: HTML, CSS
-- 특징: 부드러운 스크롤 , ( mainpage  + subpage4)
-- GitHub: [🔗 바로가기](https://github.com/username/miniprofile)
+- 사용 기술: HTML5, CSS3, JavaScript
+- 특징: 3D슬라이드, mp3플레이+비주얼라이저 ( mainpage  + subpage4)
+- GitHub: [🔗 바로가기](https://juyeung.github.io/study310/project003/index.html)
 - GitHubCODE: [🔗 바로가기](https://github.com/username/myblog)
 
 ---
