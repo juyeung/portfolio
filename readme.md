@@ -47,8 +47,8 @@
 ## 👩‍💻 About Me
 
 - 🔭 현재 웹디자인& 프론트엔드 공부 중!
-- 🌱 UIUX 기획과 Html,Css,JavaScript 에집중하고 있어요.
-- 📫 연락: your.email@example.com
+- 🌱 UIUX 기획과 HTML5,CSS3,JavaScript 에집중하고 있어요.
+- ✉ 연락: jijumto04@gmail.com
 
 ---
 
