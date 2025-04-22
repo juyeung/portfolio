@@ -5,7 +5,8 @@
 <h1 align="center">안녕하세요! 👋 UX/UI 디자이너 김주영 입니다.</h1>
 <p align="center">내가 생각하는 <span style="color:#B03CE7; font-weight:bold;">디자인이란?</span></p>
 <p align="center">
-  <span style="color:#007BFF; font-weight:bold;, font-size:20;">배려와 공감을 바탕으로</span>(문제발견) <span style="color:#007BFF; font-weight:bold;">삶을 아름답게 만드는것</span>(문제해결)
+  <span style="color:#007BFF; font-weight:bold;, font-size:20;">배려와 공감을 바탕으로</span>(문제발견)
+  <span style="color:#007BFF; font-weight:bold;">삶을 아름답게 만드는것</span>(문제해결)
 </p>
 
 ## 🔗 Portfolio 메인 링크
