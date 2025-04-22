@@ -2,7 +2,7 @@
   <img src="">
 </p>
 
-<h1 align="center">안녕하세요! 👋 UX/UI 디자이너 김주영 입니다.</h1>
+<h1 align="center">안녕하세요! 👋 UX/UI 디자이너 김주영🌼 입니다.</h1>
 <p align="center">내가 생각하는 디자인이란?</p>
 <p align="center">
   배려와 공감을 바탕으로(문제발견)
