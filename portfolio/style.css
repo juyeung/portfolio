@@ -136,7 +136,6 @@ header .box2 .email {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    cursor: pointer;
     transition: all 0.3s;
 }
 header .box2 .email:hover {
