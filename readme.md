@@ -19,7 +19,7 @@
 - 주요 기능: 예약 시스템, 달력, 구글맵 임배드, 반응형 디자인 ( mainpage )
 - 그외 인터렉션: 언어스위치토글, 탭바, 트리거이미지슬라이드, 아코디언ui
 - GitHub: [🔗 바로가기](https://juyeung.github.io/portfolio/project001/index.html)
-- GitHubCODE: [🔗 바로가기](https://github.com/juyeung/study310/blob/main/project001/index.html)
+- GitHubCODE: [🔗 바로가기](https://github.com/juyeung/portfolio/blob/main/project001/index.html)
 
 ---
 
