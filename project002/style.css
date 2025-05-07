@@ -2,8 +2,8 @@
 @charset 'utf-8';
 @font-face {
     font-family: 'font';
-    src: url(font/Cooper-Black.otf),format('otf'),
-    url(font/Radiance-Bold.otf),format('otf');
+    src: url(font/Cooper-Black.woff),format('woff'),
+    url(font/Radiance-Bold.woff),format('woff');
 }
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -821,6 +821,10 @@ animation-direction: reverse;
 .youtube {
     text-align: center;
     background-color: #000;
+    height: 60vh;
+}
+.youtube iframe {
+    height: 100%;
 }
 .youtube video {
     vertical-align: bottom;
