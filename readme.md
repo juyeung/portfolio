@@ -2,7 +2,7 @@
 - ✉ 연락: jijumto04@gmail.com
 - ![home_01](https://github.com/user-attachments/assets/a164c3c9-24df-4a62-915b-8eddee437d71)
 
-<h1 align="center">안녕하세요! 👋 UX/UI 디자이너 김주영🌼 입니다.</h1>
+<h1 align="center">안녕하세요! 👋 UX/UI 프론트앤드 디자이너 김주영🌼 입니다.</h1>
 <p align="center">내가 생각하는 디자인이란?</p>
 <p align="center">
   배려와 공감을 바탕으로(문제발견)
@@ -51,7 +51,7 @@
 
 ## 👩‍💻 About Me
 
-- 🔭 현재 웹디자인& 프론트엔드 공부 중!
+- 🔭 현재 웹디자인& 프론트앤드 공부 중!
 - 🌱 UIUX 기획과 HTML5,CSS3,JavaScript 에집중하고 있어요.
 - ✉ 연락: jijumto04@gmail.com
 
