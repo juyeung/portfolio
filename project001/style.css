@@ -252,9 +252,9 @@ nav .menu ul li .title>p {
 
 /* landing ##############################################################################*/
 .landing {
-    background-image: url(img/landing_bg_005.png);
+    /* background-image: url(img/landing_bg_005.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     height: 100vh;
     position: relative;
     overflow: hidden;
