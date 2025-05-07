@@ -63,5 +63,6 @@
 
 ## 포트폴리오 프레젠테이션
 이 포트폴리오 프레젠테이션에서는 프로젝트 개요, 디자인 의도, 기능 시연 등을 담았습니다.
-[프레젠테이션 보러가기](https://www.figma.com/proto/P1AC0egpVvdNZ7Q62KKCWX/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?node-id=257-2312&t=7K1Ie1ns8XrtuQX5-1)
+
+- [프레젠테이션 보러가기](https://www.figma.com/proto/P1AC0egpVvdNZ7Q62KKCWX/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?node-id=257-2312&t=7K1Ie1ns8XrtuQX5-1)
 
