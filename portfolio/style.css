@@ -538,9 +538,7 @@ article a:hover {
 .gitadd {
     position: absolute;
     width: 1440px;
-    top: 400px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
     cursor: pointer;
     font-weight: 600;
     text-align: left;
