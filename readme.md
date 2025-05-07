@@ -30,7 +30,7 @@
 - 주요 기능: 장바구니 기능, 네이버API활용 로그인 ( mainpage  + subpage4)
 - 그외 인터렉션: 패럴렉스스크롤링, 스크롤진입기반슬라이드
 - GitHub: [🔗 바로가기](https://juyeung.github.io/portfolio/project002/index.html)
-- GitHubCODE: [🔗 바로가기](https://github.com/juyeung/study310/blob/main/project002/index.html)
+- GitHubCODE: [🔗 바로가기](https://github.com/juyeung/portfolio/blob/main/project002/index.html)
 
 ---
 
@@ -41,7 +41,7 @@
 - 특징: 3D슬라이드, mp3플레이+비주얼라이저 ( mainpage )
 - 그외 인터렉션: 애니메이션전환, youbute영상 임배드
 - GitHub: [🔗 바로가기](https://juyeung.github.io/portfolio/project003/index.html)
-- GitHubCODE: [🔗 바로가기](https://github.com/juyeung/study310/blob/main/project003/index.html)
+- GitHubCODE: [🔗 바로가기](https://github.com/juyeung/portfolio/blob/main/project003/index.html)
 
 ---
 
