@@ -18,7 +18,7 @@
 - 사용 기술: HTML5, CSS3, JavaScript
 - 주요 기능: 예약 시스템, 달력, 구글맵 임배드, 반응형 디자인 ( mainpage )
 - 그외 인터렉션: 언어스위치토글, 탭바, 트리거이미지슬라이드, 아코디언ui
-- GitHub: [🔗 바로가기](https://juyeung.github.io/study310/project001/index.html)
+- GitHub: [🔗 바로가기](https://juyeung.github.io/portfolio/project001/index.html)
 - GitHubCODE: [🔗 바로가기](https://github.com/juyeung/study310/blob/main/project001/index.html)
 
 ---
@@ -29,7 +29,7 @@
 - 사용 기술: HTML5, CSS3, JavaScript
 - 주요 기능: 장바구니 기능, 네이버API활용 로그인 ( mainpage  + subpage4)
 - 그외 인터렉션: 패럴렉스스크롤링, 스크롤진입기반슬라이드
-- GitHub: [🔗 바로가기](https://juyeung.github.io/study310/project002/index.html)
+- GitHub: [🔗 바로가기](https://juyeung.github.io/portfolio/project002/index.html)
 - GitHubCODE: [🔗 바로가기](https://github.com/juyeung/study310/blob/main/project002/index.html)
 
 ---
@@ -40,7 +40,7 @@
 - 사용 기술: HTML5, CSS3, JavaScript
 - 특징: 3D슬라이드, mp3플레이+비주얼라이저 ( mainpage )
 - 그외 인터렉션: 애니메이션전환, youbute영상 임배드
-- GitHub: [🔗 바로가기](https://juyeung.github.io/study310/project003/index.html)
+- GitHub: [🔗 바로가기](https://juyeung.github.io/portfolio/project003/index.html)
 - GitHubCODE: [🔗 바로가기](https://github.com/juyeung/study310/blob/main/project003/index.html)
 
 ---
