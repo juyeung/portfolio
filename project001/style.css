@@ -523,6 +523,7 @@ nav .menu ul li .title>p {
     min-height: 900px;
     /* max-height: 1000px; */
     /* position: relative; */
+    margin-bottom: 120px;
 }
 
 .boad>h2 {
@@ -719,52 +720,74 @@ nav .menu ul li .title>p {
 
 /* 동물이야기 #################################################################*/
 .story {
-    display: flex;
-    justify-content: center;
     background-image: url(img/story_bg.png);
     background-repeat: no-repeat;
     background-size: contain;
-    margin-top: 80px;
-    height: 100vh;
+    padding-top: 120px;
+    height: 80vh;
+    display: flex;
+    overflow: hidden;
 }
-.story .bg {}
-.story .bg img {}
+.story .title_inner {
+    display: flex;
+    width: 41px;
+}
+
+.story .title_inner>h2 {
+    width: 41px;
+    color: #3a3a3a;
+    font-size: 48px;
+    font-weight: normal;
+    font-family: "Black Han Sans", serif;
+    line-height: 40px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 4px;
+}
+
+.story .title_inner .sub>p {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Inter";
+    line-height: 130%;
+    margin-top: 8px;
+}
 
 .container {
     display: flex;
     width: 1440px;
     height: 100%;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .slides {
     /* flex: 1; */
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 50%;
     text-align: center;
   }
   .slide {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
+    transform: translateX(-50%) scale(0.9);
     opacity: 0;
     transition: transform 0.8s, opacity 0.8s;
     z-index: 1;
   }
   .slide.prev {
-    transform: translate(-55%, -55%);
+    transform: translate(-55%, -5%);
     opacity: 0.4;
     z-index: 0;
   }
   .slide.active {
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     opacity: 1;
     z-index: 2;
   }
   .slide.next {
-    transform: translate(-50%, 70%);
+    transform: translate(-50%, 120%);
     opacity: 0.4;
     z-index: 0;
   }
@@ -776,7 +799,7 @@ nav .menu ul li .title>p {
   .story_body {
     flex: 1;
     position: relative;
-    padding: 100px 50px;
+    padding: 0 50px;
     width: 50%;
     height: 100%;
     display: flex;
@@ -2397,7 +2420,7 @@ footer {
 }
 /* 1440px이상일때 */
 @media (min-width: 1440px){
-    .title_inner, .con_box, .story .wrap, .rough, .table {
+    .title_inner, .con_box, .story, .rough, .table {
         width: 1440px;
         margin: 0 auto;
     }
