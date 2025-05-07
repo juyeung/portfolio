@@ -1,10 +1,14 @@
 /* 언어설정 */
 @charset 'utf-8';
 @font-face {
-    font-family: 'font';
-    src: url(font/Cooper-Black.woff),format('woff'),
-    url(font/Radiance-Bold.woff),format('woff');
+    font-family: 'CooperBlack';
+    src: url('font/Cooper-Black.woff') format('woff');
 }
+@font-face {
+    font-family: 'RadianceBold';
+    src: url('font/Radiance-Bold.woff') format('woff');
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset CSS */
@@ -252,7 +256,7 @@ animation-direction: reverse;
 }
 .heroTitle h3 em {
     font-size: 32px;
-    font-family: 'Cooper';
+    font-family: 'CooperBlack', sans-serif;
     font-style: normal;
 }
 .heroTitle h2 {
