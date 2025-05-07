@@ -137,13 +137,13 @@ $(document).ready(function(){
 
     // 깃허브페이지 연결
     $('.project01 .gitadd').on('click', function() {
-        window.open('https://juyeung.github.io/study310/project001/index.html', '_blank');
+        window.open('https://juyeung.github.io/portfolio/project001/index.html', '_blank');
     });
     $('.project02 .gitadd').on('click', function() {
-        window.open('https://juyeung.github.io/study310/project002/index.html', '_blank');
+        window.open('https://juyeung.github.io/portfolio/project002/index.html', '_blank');
     });
     $('.project03 .gitadd').on('click', function() {
-        window.open('https://juyeung.github.io/study310/project003/index.html', '_blank');
+        window.open('https://juyeung.github.io/portfolio/project003/index.html', '_blank');
     });
 
     // home mainImg 마우스위치에 따라 이미지 조정
