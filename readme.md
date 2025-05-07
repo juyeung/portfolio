@@ -7,7 +7,7 @@
 
 ## 🔗 Portfolio 메인 링크
 
-### [📂김주영의 포트폴리오 전체 보기](http://jijumto.dothome.co.kr/)
+### [📂김주영의 포트폴리오 전체 보기](https://juyeung.github.io/portfolio/portfolio/index.html)
 ---
 
 ## 🛠️ 진행한 프로젝트
