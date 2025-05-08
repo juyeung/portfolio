@@ -180,5 +180,14 @@ $(document).ready(function(){
         $('html, body').animate({ scrollTop: 0 }, 500);
       });
 
+
+    //   반응형웹 미디어쿼리 스크립트
+    const gnb = document.querySelector('.gnb');
+    const navi = document.querySelector('.navi');
+
+    gnb.addEventListener('click', () => {
+        navi.classList.toggle('on');
+    });
+
    
 }) // 스크립트 끝
