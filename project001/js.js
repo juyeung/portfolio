@@ -359,7 +359,34 @@ $(".faq_list ul li .a").hide(); // 처음에 모든 답변 숨김
         $(this).html(newText);  // text()에서 html()로 변경
       });
     });
-    
+
+    // 태블릿 모바일 예매티켓 리스트 드래그 슬라이드
+    let isDown = false;
+let startX;
+let scrollLeft;
+
+const $slider = $('.ticket .list');
+
+$slider.on('mousedown touchstart', function(e) {
+  isDown = true;
+  startX = e.pageX || e.originalEvent.touches[0].pageX;
+  scrollLeft = this.scrollLeft;
+  $(this).addClass('dragging');
+});
+
+$slider.on('mouseleave mouseup touchend', function() {
+  isDown = false;
+  $(this).removeClass('dragging');
+});
+
+$slider.on('mousemove touchmove', function(e) {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX || e.originalEvent.touches[0].pageX;
+  const walk = (x - startX) * 1.5;
+  this.scrollLeft = scrollLeft - walk;
+});
+
     
 
 }); // 스크립트 끝

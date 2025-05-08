@@ -369,7 +369,8 @@ $(".listBox > div").click(function () {
 
 // 플레이 상태 확인 변수
 
-$(".play").click(function () {
+$(".play").click(function (e) {
+    e.preventDefault();
     if (isPlaying) {
         audio.pause();
         $(".play i").removeClass("fa-pause").addClass("fa-play"); // 아이콘 변경
@@ -380,7 +381,8 @@ $(".play").click(function () {
     isPlaying = !isPlaying;
 });
 
-$(".stop").click(function () {
+$(".stop").click(function (e) {
+    e.preventDefault();
     audio.pause();
     audio.currentTime = 0; // 재생 위치를 처음으로 되돌리기
     $(".play i").removeClass("fa-stop").addClass("fa-play"); // 아이콘 변경
@@ -391,7 +393,8 @@ $(".stop").click(function () {
 
 
 // 음소거 버튼
-$(".sound").click(function () {
+$(".sound").click(function (e) {
+    e.preventDefault();
     isMuted = !isMuted;
     audio.muted = isMuted;
 

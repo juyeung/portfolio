@@ -1,10 +1,14 @@
 /* 언어설정 */
 @charset 'utf-8';
 @font-face {
-    font-family: 'font';
-    src: url(font/Cooper-Black.otf),format('otf'),
-    url(font/Radiance-Bold.otf),format('otf');
+    font-family: 'CooperBlack';
+    src: url('font/CooperFiveOpti-Black.woff') format('woff');
 }
+@font-face {
+    font-family: 'RadianceBold';
+    src: url('font/Radiance-Bold.woff') format('woff');
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset CSS */
@@ -252,12 +256,12 @@ animation-direction: reverse;
 }
 .heroTitle h3 em {
     font-size: 32px;
-    font-family: 'Cooper';
+    font-family: 'CooperBlack';
     font-style: normal;
 }
 .heroTitle h2 {
     font-size: 120px;
-    font-family: 'Radiance';
+    font-family: 'RadianceBold';
 }
 .scroll {
     position: absolute;
@@ -439,7 +443,7 @@ animation-direction: reverse;
     color: #C10C1A;
     text-align: center;
     font-size: 40px;
-    font-family: 'cooper black';
+    font-family: 'CooperBlack';
     margin-bottom: 40px;
 }
 .productCon {
@@ -821,6 +825,10 @@ animation-direction: reverse;
 .youtube {
     text-align: center;
     background-color: #000;
+    height: 60vh;
+}
+.youtube iframe {
+    height: 100%;
 }
 .youtube video {
     vertical-align: bottom;
@@ -866,7 +874,7 @@ animation-direction: reverse;
 }
 .aboutMe .text h2 {
     font-size: 52px;
-    font-family: "cooper black";
+    font-family: 'CooperBlack';
     margin-bottom: 32px;
     text-align: center;
 }
@@ -919,7 +927,7 @@ animation-direction: reverse;
 .ing .sheet .text h2 {
     color: #fff;
     font-size: 40px;
-    font-family: 'cooper black';
+    font-family: 'CooperBlack';
     margin-bottom: 20px;
 }
 .sheet .text p {
@@ -1042,7 +1050,7 @@ animation: marquee 40s linear infinite;
     color: #fff;
     text-align: center;
     font-size: 40px;
-    font-family: 'cooper black';
+    font-family: 'CooperBlack';
     padding-top: 80px;
     margin-bottom: 40px;
 }
@@ -1233,7 +1241,7 @@ animation: marquee 40s linear infinite;
 }
 .history .title h2 {
     font-size: 120px;
-    font-family: "cooper black";
+    font-family: 'CooperBlack';
     font-weight: bold;
     color: #C10C1A;
     margin: 12px 0;
@@ -1430,7 +1438,7 @@ animation: marquee 40s linear infinite;
 }
 .copyright h3 {
     font-size: 24px;
-    font-family: "cooper black";
+    font-family: 'CooperBlack';
     margin: 40px 0;
 }
 .copyright .sns {
@@ -1462,7 +1470,7 @@ animation: marquee 40s linear infinite;
     color: #C10C1A;
     text-align: center;
     font-size: 40px;
-    font-family: 'cooper black';
+    font-family: 'CooperBlack';
     margin-bottom: 80px;
 }
 .yt {
@@ -2096,7 +2104,7 @@ animation: marquee 40s linear infinite;
     margin-bottom: 20px;
 }
 .login .loginInp p em {
-    font-family: "cooper black";
+    font-family: 'CooperBlack';
     font-style: normal;
     font-size: 28px;
 }
@@ -2209,7 +2217,7 @@ animation: marquee 40s linear infinite;
 .cartPage h2 {
     color: #C10C1A;
     font-size: 40px;
-    font-family: 'cooper black';
+    font-family: 'CooperBlack';
     margin: 40px 0;
 }
 .cartPage .listTitle {

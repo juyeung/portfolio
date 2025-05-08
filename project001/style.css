@@ -36,12 +36,11 @@ img {
     align-items: center;
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%;
+    transform: translateX(-50%); */
     z-index: 999;
     transition: top 0.3s ease;
     background-color: rgba(1, 20, 59, 0.8);
-    padding: 0 240px;
     box-sizing: border-box;
 }
 
@@ -253,11 +252,12 @@ nav .menu ul li .title>p {
 
 /* landing ##############################################################################*/
 .landing {
-    background-image: url(img/landing_bg_005.png);
+    /* background-image: url(img/landing_bg_005.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 .landing .video_bg {
     position: relative;
@@ -523,6 +523,7 @@ nav .menu ul li .title>p {
     min-height: 900px;
     /* max-height: 1000px; */
     /* position: relative; */
+    margin-bottom: 120px;
 }
 
 .boad>h2 {
@@ -719,52 +720,65 @@ nav .menu ul li .title>p {
 
 /* 동물이야기 #################################################################*/
 .story {
-    display: flex;
-    justify-content: center;
     background-image: url(img/story_bg.png);
     background-repeat: no-repeat;
     background-size: contain;
-    margin-top: 80px;
-    height: 100vh;
+    padding-top: 120px;
+    height: 80vh;
+    display: flex;
+    overflow: hidden;
 }
-.story .bg {}
-.story .bg img {}
+.story .title_inner {
+    display: flex;
+    width: 41px;
+}
+
+.story .title_inner>h2 {
+    width: 41px;
+    color: #3a3a3a;
+    font-size: 48px;
+    font-weight: normal;
+    font-family: "Black Han Sans", serif;
+    line-height: 40px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 4px;
+}
 
 .container {
     display: flex;
     width: 1440px;
     height: 100%;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .slides {
     /* flex: 1; */
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 50%;
     text-align: center;
   }
   .slide {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
+    transform: translateX(-50%) scale(0.9);
     opacity: 0;
     transition: transform 0.8s, opacity 0.8s;
     z-index: 1;
   }
   .slide.prev {
-    transform: translate(-55%, -55%);
+    transform: translate(-55%, -5%);
     opacity: 0.4;
     z-index: 0;
   }
   .slide.active {
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     opacity: 1;
     z-index: 2;
   }
   .slide.next {
-    transform: translate(-50%, 70%);
+    transform: translate(-50%, 120%);
     opacity: 0.4;
     z-index: 0;
   }
@@ -776,7 +790,7 @@ nav .menu ul li .title>p {
   .story_body {
     flex: 1;
     position: relative;
-    padding: 100px 50px;
+    padding: 0 50px;
     width: 50%;
     height: 100%;
     display: flex;
@@ -873,6 +887,7 @@ nav .menu ul li .title>p {
 /* 테마존 ############################################################## */
 .theme {
     width: 100%;
+    height: 100vh;
     padding: 160px 0;
 }
 
@@ -924,7 +939,7 @@ nav .menu ul li .title>p {
     position: relative;
 }
 
-.theme .pro .f01 .rough .img {}
+.theme .pro .f01 .rough>img {}
 
 /* f01_01 ############################################################# */
 .theme .pro .f01 .rough .f01_01 {
@@ -2386,15 +2401,27 @@ footer {
     font-size: 14px;
 }
 
+
 /* 전체설정 */
+/* 1920px일때 */
+@media (min-width: 1920px) {
+    header {
+        padding: 0 240px;
+    }
+}
 /* 1440px이상일때 */
-@media (min-width: 1440px) {
-    .title_inner, .con_box, .story .wrap, .rough, .table {
+@media (min-width: 1440px){
+    .title_inner, .con_box, .container, .rough, .table {
         width: 1440px;
         margin: 0 auto;
     }
+    .theme {
+        overflow: hidden;
+    }
 }
-@media (min-width: 834px) and (max-width: 1439px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    /* 애니멀스토리 */
     .story {
         height: 100%;
     }
@@ -2478,5 +2505,56 @@ footer {
       height: 44px;
       font-size: 14px;
     }
+
+    /* 프로그램 */
+    .theme .pro .f01 .rough>img {
+        display: none;
+    }
+    .theme .pro .f01 .rough .f01_01 {
+        right: 0;
+        width: 100%;
+    }
+    .theme .pro .f01 .rough .f01_02 {
+        right: 0;
+        width: 100%;
+    }
+    .theme .pro .f01 .rough .f01_01 li {
+        width: 393px;
+    }
+    .theme .pro .f01 .rough .f01_02 li {
+        width: 393px;
+    }
+
+    /* 예매 */
+    /* .ticket .listBox .list .book {
+        display: none;
+    } */
   }
+
+  
+  /* 반응형 스타일 */
+  @media (max-width: 1024px) {
+    .ticket .list {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding: 0 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .ticket .list li {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+  
+    .ticket .list li.book {
+      display: none; /* 슬라이드에서 숨김 */
+    }
+  }
+  
+  
+  
+  
   
