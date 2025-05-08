@@ -369,6 +369,29 @@ $(document).on('click', '.decrease', function() {
         $('.contents>div').eq(3).addClass('on')
     })
 
+    // viewcart 클릭했을때, cart 에 on이 붙어라
+    $('.viewcart').click(function(e){
+        e.preventDefault()
+        $('.contents>div').removeClass('on')
+        $('.cartPage').addClass('on')
+    })
+
+    // 구매하기 클릭했을때, login 에 on이 붙어라
+    $('.checkout').click(function(e){
+        e.preventDefault()
+        $('.contents').addClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(3).addClass('on')
+    })
+
+    // 주문하기 클릭했을때, login 에 on이 붙어라
+    $('.cartPage>p').click(function(e){
+        e.preventDefault()
+        $('.contents').addClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(3).addClass('on')
+    })
+
     // main 에 pro의 li들을 클릭했을때, product 에 on이 붙어라
     $('.pro_list li').click(function(){
         $('.contents').removeClass('loginBig')
