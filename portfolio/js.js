@@ -5,7 +5,7 @@ $(document).ready(function(){
         $('nav p').removeClass('on')
         $(this).addClass('on')
     })
-    $('nav p').eq(0).click(function(e){
+    $('nav p:eq(0), .navi ul li:eq(0)').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap>div').eq(0).addClass('on')
@@ -13,7 +13,7 @@ $(document).ready(function(){
         $('header .box1').css('background-color','#FE7D95')
         $('header .box2').css('background-color','#FFF')
     })
-    $('nav p').eq(1).click(function(e){
+    $('nav p:eq(1), .navi ul li:eq(1)').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap>div').eq(1).addClass('on')
@@ -21,7 +21,7 @@ $(document).ready(function(){
         $('header .box1').css('background-color','#FE7D95')
         $('header .box2').css('background-color','#FFF')
     })
-    $('nav p').eq(2).click(function(e){
+    $('nav p:eq(2), .navi ul li:eq(2)').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap>div').eq(2).addClass('on')
@@ -29,6 +29,8 @@ $(document).ready(function(){
         $('header .box1').css('background-color','#FE7D95')
         $('header .box2').css('background-color','#FFF')
     })
+
+    // 메인 이미지 클릭 시 페이지 연결
     $('.leftBox img').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
