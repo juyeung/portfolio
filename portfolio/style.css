@@ -687,7 +687,7 @@ footer p {
     height: 80px;
     position: fixed;
     bottom: 80px;
-    right: 40px;
+    right: 20px;
     z-index: 999;
     display: none;
 }
@@ -714,27 +714,27 @@ footer p {
     top: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.2s ease-in-out; /* 오른쪽으로 슬라이드하는 애니메이션 */
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: #f00;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 .navi.on li:nth-child(1) {
     transition-delay: 0.1s;
-    transform: translate(-100px, 0);
+    transform: translate(-150px, -20px);
 }
 .navi.on li:nth-child(2) {
     transition-delay: 0.2s;
-    transform: translate(-90px, -50px);
+    transform: translate(-130px, -82px);
 }
 .navi.on li:nth-child(3) {
     transition-delay: 0.3s;
-    transform: translate(-50px, -90px);
+    transform: translate(-82px, -130px);
 }
 .navi.on li:nth-child(4) {
     transition-delay: 0.4s;
-    transform: translate(0, -100px);
+    transform: translate(-20px, -150px);
 }
 .navi.on li:nth-child(5) {
     transition-delay: 0.5s;
