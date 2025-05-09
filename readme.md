@@ -13,7 +13,7 @@
 ## 🔗 Portfolio 메인 링크
 
 ### [📂김주영의 포트폴리오 전체 보기](https://juyeung.github.io/portfolio/portfolio/index.html)
-<span style="font-size:10">이 포트폴리오는 1920 해상도에 최적화 되어있습니다.</span>
+<span style="font-size:10px">이 포트폴리오는 1920 해상도에 최적화 되어있습니다.</span>
 
 ## 🛠️ 진행한 프로젝트
 
