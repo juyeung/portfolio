@@ -4,7 +4,7 @@
 ![home_02](https://github.com/user-attachments/assets/dc665e36-6b27-4cb1-983a-8b43233db50a)
 
 <h1 align="center">안녕하세요! 👋 UX/UI 프론트앤드 디자이너 김주영🌼 입니다.</h1>
-<p> align="center">내가 생각하는 디자인이란?</p>
+<p align="center">내가 생각하는 디자인이란?</p>
 <p align="center">
   배려와 공감을 바탕으로(문제발견)
   삶을 아름답게 만드는것(문제해결)
