@@ -522,20 +522,43 @@ article a:hover {
 
 /* 프로젝트 상세 */
 .pro {
-    position: relative;
-    overflow: hidden;
+    width: 100%;
     transition: all 0.8s;
     height: 100%;
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
     margin-top: 80px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.container img {}
+.figmalink {
+    position: absolute;
+    width: auto;
+    left: 350px;
+    top: 367px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: left;
+}
+.figmalink a {
+    font-size: 12px;
+    margin: 4px 0;
+    width: 396px;
+}
+.figmalink a:hover {
+    color: #3787FF;
 }
 .gitadd {
     position: absolute;
-    width: 1440px;
-    left: 50%;
+    width: auto;
+    left: 85px;
     top: 400px;
-    transform: translateX(-50%);
     cursor: pointer;
     font-weight: 600;
     text-align: left;
@@ -543,8 +566,6 @@ article a:hover {
 .gitadd p {
     font-size: 14px;
     margin: 4px 0;
-    margin-left: 85px;
-    width: 396px;
 }
 .project01 {
     background-color: #F9FBFF;
@@ -662,12 +683,11 @@ footer p {
 
 .navi {
     position: fixed;
-    bottom: 0;
+    bottom: 80px;
     right: -250px; /* 기본적으로 화면 밖에 위치 */
-    width: 250px;
-    height: 300px;
+    width: 80px;
+    height: 360px;
     border-top-left-radius: 20px;
-    background-color: #fff;
     transition: all 0.3s ease-in-out; /* 오른쪽으로 슬라이드하는 애니메이션 */
 }
 
@@ -680,33 +700,38 @@ footer p {
 }
 
 .navi li {
-    height: 52px;
     border-bottom: 1px solid #c9c9c9;
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    justify-content: center;
     transform: translateX(100%);
-    transition: all 0.3s ease-in-out; /* 오른쪽으로 슬라이드하는 애니메이션 */
+    transition: all 0.2s ease-in-out; /* 오른쪽으로 슬라이드하는 애니메이션 */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 10px 0;
 }
 .navi.on li:nth-child(1) {
-    transition-delay: 0.2s;
-    transform: translateX(0);
+    transition-delay: 0.1s;
+    transform: translateX(-20px);
 }
 .navi.on li:nth-child(2) {
-    transition-delay: 0.3s;
-    transform: translateX(0);
+    transition-delay: 0.2s;
+    transform: translateX(-20px);
 }
 .navi.on li:nth-child(3) {
-    transition-delay: 0.4s;
-    transform: translateX(0);
+    transition-delay: 0.3s;
+    transform: translateX(-20px);
 }
 .navi.on li:nth-child(4) {
-    transition-delay: 0.5s;
-    transform: translateX(0);
+    transition-delay: 0.4s;
+    transform: translateX(-20px);
 }
 .navi.on li:nth-child(5) {
-    transition-delay: 0.6s;
-    transform: translateX(0);
+    transition-delay: 0.5s;
+    transform: translateX(-20px);
 }
 
 .navi li>a {
@@ -718,7 +743,6 @@ footer p {
 
 .navi li>p {
     color: #111;
-    margin-left: 32px;
 }
 .navi ul>.text {
     font-size: 14px;
