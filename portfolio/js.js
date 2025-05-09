@@ -5,7 +5,7 @@ $(document).ready(function(){
         $('nav p').removeClass('on')
         $(this).addClass('on')
     })
-    $('nav p:eq(0), .navi ul li:eq(0)').click(function(e){
+    $('nav p:eq(0), .navi li:eq(0)').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap>div').eq(0).addClass('on')
@@ -13,7 +13,7 @@ $(document).ready(function(){
         $('header .box1').css('background-color','#FE7D95')
         $('header .box2').css('background-color','#FFF')
     })
-    $('nav p:eq(1), .navi ul li:eq(1)').click(function(e){
+    $('nav p:eq(1), .navi li:eq(1)').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap>div').eq(1).addClass('on')
@@ -21,7 +21,7 @@ $(document).ready(function(){
         $('header .box1').css('background-color','#FE7D95')
         $('header .box2').css('background-color','#FFF')
     })
-    $('nav p:eq(2), .navi ul li:eq(2)').click(function(e){
+    $('nav p:eq(2), .navi li:eq(2)').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap>div').eq(2).addClass('on')
@@ -184,12 +184,10 @@ $(document).ready(function(){
 
 
     //   반응형웹 미디어쿼리 스크립트
-    const gnb = document.querySelector('.gnb');
-    const navi = document.querySelector('.navi');
-
-    gnb.addEventListener('click', () => {
-        navi.classList.toggle('on');
-    });
+    $('.gnb').click(function () {
+        $('.navi').toggleClass('on');
+        $('.hamburger').toggleClass('on');
+      });
 
    
 }) // 스크립트 끝
