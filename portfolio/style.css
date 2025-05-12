@@ -863,6 +863,12 @@ footer p {
     .mainImg {
         height: 400px;
     }
+    .latestBox {
+        flex-wrap: wrap;
+    }
+    .latestBox>div {
+        margin: 10px 0;
+    }
 }
 
 /* 태블릿 가로 iPAD PRO 11 1194px */
