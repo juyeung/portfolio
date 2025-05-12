@@ -163,16 +163,19 @@ header .box2>.email p {
 .mainImg {
     width: 100%;
     height: 500px;
+    /* padding-top: 34.72%; */
     margin: 0 auto;
     display: flex;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 
 .mainImg .leftBox {
     width: 100%;
     height: 100%;
     position: absolute;
+    left: 0;
+    top: 0;
     cursor: pointer;
     /* text-align: center; */
     display: flex;
@@ -180,14 +183,33 @@ header .box2>.email p {
     align-items: flex-end;
 }
 
-.mainImg .leftBox img {
+.mainImg .leftBox .desk {
     background-color: #fff;
+    width: 100vw;
+    height: auto;
+    max-width: 1440px;
+    display: block;
 }
-
+.mainImg .leftBox .tablet {
+    background-color: #fff;
+    width: 100vw;
+    height: auto;
+    max-width: 767px;
+    display: none;
+}
+.mainImg .leftBox .mobile {
+    background-color: #fff;
+    width: 100vw;
+    height: auto;
+    max-width: 610px;
+    display: none;
+}
 .mainImg .rightBox {
     width: 100%;
     height: 100%;
     position: absolute;
+    left: 0;
+    bottom: 0;
     cursor: pointer;
     transition: clip-path 0.2s ease;
     /* text-align: center; */
@@ -198,6 +220,9 @@ header .box2>.email p {
 
 .mainImg .rightBox img {
     background-color: #fff;
+    width: 100vw;
+    height: auto;
+    max-width: 1440px;
 }
 
 
@@ -828,6 +853,15 @@ footer p {
     }
     .wrap>div {
         margin-top: 0;
+    }
+    .mainImg .leftBox .desk {
+        display: none;
+    }
+    .mainImg .leftBox .mobile {
+        display: block;
+    }
+    .mainImg {
+        height: 400px;
     }
 }
 
