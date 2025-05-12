@@ -154,17 +154,8 @@ $(document).ready(function(){
         const $rightBox = $('.rightBox');
         const isMobile = window.matchMedia('(max-width: 1024px)').matches;
       
-        // 공통 함수
-        const showRight = () => {
-          $rightBox.css('clip-path', 'inset(0 0 0 0)');
-        };
-      
-        const hideRight = () => {
-          $rightBox.css('clip-path', 'inset(0 0 0 100%)');
-        };
-      
         if (!isMobile) {
-          // 👉 PC: 마우스 위치 기반
+          // PC: 마우스 위치에 따라 드러남
           $mainImg.on('mousemove', function (e) {
             const containerLeft = $mainImg.offset().left;
             const containerWidth = $mainImg.width();
@@ -175,26 +166,30 @@ $(document).ready(function(){
             $rightBox.css('clip-path', 'inset(0 0 0 ' + clipped + '%)');
           });
         } else {
-          // 👉 모바일/태블릿: 스와이프 방향 감지
-          let startX = 0;
-          let endX = 0;
+          // 모바일: 스와이프 중 실시간 반응
+          let containerLeft = $mainImg.offset().left;
+          let containerWidth = $mainImg.width();
       
-          $mainImg.on('touchstart', function (e) {
-            startX = e.originalEvent.touches[0].clientX;
+          $mainImg.on('touchmove', function (e) {
+            const touch = e.originalEvent.touches[0];
+            const touchX = touch.clientX - containerLeft;
+            const percentage = (touchX / containerWidth) * 100;
+            const clipped = Math.max(0, Math.min(100, 100 - percentage));
+            $rightBox.css('clip-path', 'inset(0 0 0 ' + clipped + '%)');
           });
       
+          // 손가락 떼면 자동으로 열거나 닫기
           $mainImg.on('touchend', function (e) {
-            endX = e.originalEvent.changedTouches[0].clientX;
-            const delta = endX - startX;
+            const touch = e.originalEvent.changedTouches[0];
+            const touchX = touch.clientX - containerLeft;
+            const percentage = (touchX / containerWidth) * 100;
       
-            if (Math.abs(delta) > 30) {
-              if (delta < 0) {
-                // 오른쪽 → 왼쪽
-                showRight();
-              } else {
-                // 왼쪽 → 오른쪽
-                hideRight();
-              }
+            if (percentage < 50) {
+              // 절반 이하 → 많이 스와이프 → 전부 보이기
+              $rightBox.css('clip-path', 'inset(0 0 0 0)');
+            } else {
+              // 덜 밀었으면 → 숨기기
+              $rightBox.css('clip-path', 'inset(0 0 0 100%)');
             }
           });
         }
