@@ -354,24 +354,27 @@ header .box2>.email p {
     font-weight: normal;
 }
 .about .graph {
-    width: 1020px;
+    width: 1024px;
+    height: 320px;
     margin: 0 auto;
     display: flex;
     margin-top: 56px;
 }
 .about .graph .level {
+    text-align: left;
 }
 .about .graph .level p {
     font-size: 14px;
     margin-bottom: 60px;
 }
 .about .graph .level_line {
-    margin-left: 16px;
+    width: 100%;
     height: 100%;
+    margin-left: 16px;
     position: relative;
 }
 .about .graph .level_line .line {
-    width: 952px;
+    width: 100%;
     height: 1px;
     background-color: #c9c9c9;
     margin-bottom: 80px;
@@ -413,7 +416,7 @@ header .box2>.email p {
 .about .graph .level_line .stick>div .per span {
     font-size: 20px;
 }
-.about .graph .level_line .stick>div p {
+.about .graph .level_line .stick>div>p {
     font-size: 16px;
 }
 .about .graph .level_line .stick .stick01 {
@@ -856,6 +859,7 @@ footer p {
 /* 반응형 미디어쿼리 */
 /* 모바일 */
 @media (max-width: 767px) {
+    /* home */
     header {
         display: none;
     }
@@ -886,6 +890,75 @@ footer p {
     }
     .latestBox>div {
         margin: 10px 0;
+    }
+
+    /* about */
+    .about .graph {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 80px;
+    }
+    .about .graph .level {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin-bottom: 12px;
+    }
+    .about .graph .level p {
+        margin: 0;
+    }
+    .about .graph .level_line {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .about .graph .level_line .line {
+        width: 1px;
+        height: 100%;
+    }
+    .about .graph .level_line .stick {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+    }
+    .about .graph .level_line .stick>div {
+        width: 100%;
+        height: 48px;
+        margin: 4px 0;
+        padding-left: 12px;
+        flex-direction: row-reverse;
+        border-top-left-radius: 0;
+        border-top-right-radius: 10px;
+    }
+    .about .graph .level_line .stick>div .per {}
+    .about .graph .level_line .stick>div .per p {
+        font-size: 28px;
+    }
+    .about .graph .level_line .stick .stick01 {
+        width: 90%;
+        height: 100%;
+    }
+    .about .graph .level_line .stick .stick02 {
+        width: 95%;
+        height: 100%;
+    }
+    .about .graph .level_line .stick .stick03 {
+        width: 90%;
+        height: 100%;
+    }
+    .about .graph .level_line .stick .stick04 {
+        width: 90%;
+        height: 100%;
+    }
+    .about .graph .level_line .stick .stick05 {
+        width: 80%;
+        height: 100%;
+    }
+    .about .graph .level_line .stick .stick06 {
+        width: 95%;
+        height: 100%;
     }
 }
 
