@@ -188,7 +188,6 @@ header .box2>.email p {
     width: 100vw;
     height: auto;
     max-width: 1440px;
-    display: block;
 }
 .mainImg .leftBox .tablet {
     background-color: #fff;
@@ -216,15 +215,27 @@ header .box2>.email p {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    background-color: #fff;
 }
 
-.mainImg .rightBox img {
-    background-color: #fff;
+.mainImg .rightBox .desk {
     width: 100vw;
     height: auto;
     max-width: 1440px;
+    display: block;
 }
-
+.mainImg .rightBox .tablet {
+    width: 100vw;
+    height: auto;
+    max-width: 767px;
+    display: none;
+}
+.mainImg .rightBox .mobile {
+    width: 100vw;
+    height: auto;
+    max-width: 610px;
+    display: none;
+}
 
 
 .LatestWork {
@@ -842,8 +853,8 @@ footer p {
   }
 
 /* 반응형 미디어쿼리 */
-/* 모바일 최소 479px */
-@media (max-width: 479px) {
+/* 모바일 */
+@media (max-width: 767px) {
     header {
         display: none;
     }
@@ -860,6 +871,12 @@ footer p {
     .mainImg .leftBox .mobile {
         display: block;
     }
+    .mainImg .rightBox .desk {
+        display: none;
+    }
+    .mainImg .rightBox .mobile {
+        display: block;
+    }
     .mainImg {
         height: 400px;
     }
@@ -871,5 +888,18 @@ footer p {
     }
 }
 
-/* 태블릿 가로 iPAD PRO 11 1194px */
-@media (max-width: 1194px) {}
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .mainImg .leftBox .desk {
+        display: none;
+    }
+    .mainImg .leftBox .tablet {
+        display: block;
+    }
+    .mainImg .rightBox .desk {
+        display: none;
+    }
+    .mainImg .rightBox .tablet {
+        display: block;
+    }
+}

@@ -153,26 +153,31 @@ $(document).ready(function(){
         const $mainImg = $('.mainImg');
         const $rightBox = $('.rightBox');
       
-        function updateClip(x, containerWidth) {
-          const percentage = (x / containerWidth) * 100;
+        function updateClip(x, containerLeft, containerWidth) {
+          const relativeX = x - containerLeft;
+          const percentage = (relativeX / containerWidth) * 100;
           const clipped = Math.max(0, Math.min(100, 100 - percentage));
           $rightBox.css('clip-path', 'inset(0 0 0 ' + clipped + '%)');
         }
       
-        // PC: 마우스 이동
-        $mainImg.on('mousemove', function (e) {
-          const containerWidth = $mainImg.width();
-          const mouseX = e.clientX;
-          updateClip(mouseX, containerWidth);
-        });
+        const isMobile = window.matchMedia('(max-width: 1024px)').matches;
       
-        // 모바일/태블릿: 터치 이동
-        $mainImg.on('touchstart touchmove', function (e) {
-          const touch = e.originalEvent.touches[0];
-          const containerWidth = $mainImg.width();
-          const touchX = touch.clientX;
-          updateClip(touchX, containerWidth);
-        });
+        if (!isMobile) {
+          // 👉 PC: 마우스 이벤트만 적용
+          $mainImg.on('mousemove', function (e) {
+            const containerLeft = $mainImg.offset().left;
+            const containerWidth = $mainImg.width();
+            updateClip(e.clientX, containerLeft, containerWidth);
+          });
+        } else {
+          // 👉 모바일/태블릿: 터치 이벤트만 적용
+          $mainImg.on('touchmove', function (e) {
+            const touch = e.originalEvent.touches[0];
+            const containerLeft = $mainImg.offset().left;
+            const containerWidth = $mainImg.width();
+            updateClip(touch.clientX, containerLeft, containerWidth);
+          });
+        }
       });
       
 
