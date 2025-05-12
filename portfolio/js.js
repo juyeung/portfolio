@@ -149,18 +149,32 @@ $(document).ready(function(){
     });
 
     // home mainImg 마우스위치에 따라 이미지 조정
-    const $mainImg = $('.mainImg');
-    const $rightBox = $('.rightBox');
-    
-    $mainImg.on('mousemove', function(e) {
-        const mainImgWidth = $mainImg.width();
-        const mouseX = e.clientX; // 마우스 X 좌표
-        
-        const percentage = (mouseX / mainImgWidth) * 100;
-        
-        // 오른쪽 박스: 마우스가 오른쪽으로 갈수록 더 많이 보이게 (오른쪽으로 이동)
-        $rightBox.css('clip-path', 'inset(0 0 0 ' + (100 - percentage) + '%)');
-    });
+    $(function () {
+        const $mainImg = $('.mainImg');
+        const $rightBox = $('.rightBox');
+      
+        function updateClip(x, containerWidth) {
+          const percentage = (x / containerWidth) * 100;
+          const clipped = Math.max(0, Math.min(100, 100 - percentage));
+          $rightBox.css('clip-path', 'inset(0 0 0 ' + clipped + '%)');
+        }
+      
+        // PC: 마우스 이동
+        $mainImg.on('mousemove', function (e) {
+          const containerWidth = $mainImg.width();
+          const mouseX = e.clientX;
+          updateClip(mouseX, containerWidth);
+        });
+      
+        // 모바일/태블릿: 터치 이동
+        $mainImg.on('touchstart touchmove', function (e) {
+          const touch = e.originalEvent.touches[0];
+          const containerWidth = $mainImg.width();
+          const touchX = touch.clientX;
+          updateClip(touchX, containerWidth);
+        });
+      });
+      
 
     // top 클릭시 페이지 상단으로 이동 스크롤위치값이 0일 때 top 숨김
     // 초기 상태에서 숨김 처리

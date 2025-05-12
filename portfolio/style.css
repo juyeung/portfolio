@@ -737,7 +737,7 @@ footer p {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.2s ease-in-out; /* 오른쪽으로 슬라이드하는 애니메이션 */
+    transition: all 0.1s ease-in-out; /* 오른쪽으로 슬라이드하는 애니메이션 */
     width: 60px;
     height: 60px;
     border-radius: 50%;
