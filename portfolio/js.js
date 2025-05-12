@@ -152,30 +152,50 @@ $(document).ready(function(){
     $(function () {
         const $mainImg = $('.mainImg');
         const $rightBox = $('.rightBox');
-      
-        function updateClip(x, containerLeft, containerWidth) {
-          const relativeX = x - containerLeft;
-          const percentage = (relativeX / containerWidth) * 100;
-          const clipped = Math.max(0, Math.min(100, 100 - percentage));
-          $rightBox.css('clip-path', 'inset(0 0 0 ' + clipped + '%)');
-        }
-      
         const isMobile = window.matchMedia('(max-width: 1024px)').matches;
       
+        // 공통 함수
+        const showRight = () => {
+          $rightBox.css('clip-path', 'inset(0 0 0 0)');
+        };
+      
+        const hideRight = () => {
+          $rightBox.css('clip-path', 'inset(0 0 0 100%)');
+        };
+      
         if (!isMobile) {
-          // 👉 PC: 마우스 이벤트만 적용
+          // 👉 PC: 마우스 위치 기반
           $mainImg.on('mousemove', function (e) {
             const containerLeft = $mainImg.offset().left;
             const containerWidth = $mainImg.width();
-            updateClip(e.clientX, containerLeft, containerWidth);
+            const mouseX = e.clientX;
+            const relativeX = mouseX - containerLeft;
+            const percentage = (relativeX / containerWidth) * 100;
+            const clipped = Math.max(0, Math.min(100, 100 - percentage));
+            $rightBox.css('clip-path', 'inset(0 0 0 ' + clipped + '%)');
           });
         } else {
-          // 👉 모바일/태블릿: 터치 이벤트만 적용
-          $mainImg.on('touchmove', function (e) {
-            const touch = e.originalEvent.touches[0];
-            const containerLeft = $mainImg.offset().left;
-            const containerWidth = $mainImg.width();
-            updateClip(touch.clientX, containerLeft, containerWidth);
+          // 👉 모바일/태블릿: 스와이프 방향 감지
+          let startX = 0;
+          let endX = 0;
+      
+          $mainImg.on('touchstart', function (e) {
+            startX = e.originalEvent.touches[0].clientX;
+          });
+      
+          $mainImg.on('touchend', function (e) {
+            endX = e.originalEvent.changedTouches[0].clientX;
+            const delta = endX - startX;
+      
+            if (Math.abs(delta) > 30) {
+              if (delta < 0) {
+                // 오른쪽 → 왼쪽
+                showRight();
+              } else {
+                // 왼쪽 → 오른쪽
+                hideRight();
+              }
+            }
           });
         }
       });
