@@ -153,12 +153,11 @@ header .box2>.email p {
 .home {
     background-color: #FFF;
     width: 100%;
-    /* height: calc(100vh - 160px) ; */
+    height: auto;
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40px;
-    margin-top: 80px;
+    padding: 0 5%;
+    padding-bottom: 56px;
+    box-sizing: border-box;
 }
 .mainImg {
     width: 100%;
@@ -166,8 +165,12 @@ header .box2>.email p {
     /* padding-top: 34.72%; */
     margin: 0 auto;
     display: flex;
+    justify-content: center;
     position: relative;
-    overflow: hidden;
+}
+.mainImg img {
+    width: 100%;
+    padding: 0 5%;
 }
 
 .mainImg .leftBox {
@@ -240,13 +243,14 @@ header .box2>.email p {
 
 
 .LatestWork {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
 }
 .LatestWork .line {
-    width: 40%;
+    width: 45%;
     height: 1px;
     background-color: #c9c9c9;
 }
@@ -258,17 +262,19 @@ header .box2>.email p {
 }
 .latestBox {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 .latestBox>div {
-    width: 250px;
+    width: 32%;
     height: 220px;
     border: 1px solid #c9c9c9;
     border-radius: 10px;
     background-color: #fff;
     padding: 8px;
     box-sizing: border-box;
-    margin: 0 12px;
     cursor: pointer;
     transition: all 0.5s;
     position: relative;
@@ -278,23 +284,29 @@ header .box2>.email p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
 }
 .latestBox>div .imgBox {
-    width: 232px;
+    width: 100%;
     height: 120px;
     background-color: #ECECEC;
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.latestBox>div .imgBox img {}
+.latestBox>div .imgBox img {
+    width: auto;
+    height: auto;
+    display: block;
+}
 .latestBox>div p {
     font-size: 14px;
     font-weight: 600;
     margin-top: 12px;
+    font-family: "inter", sans-serif;
 }
 .latestBox>div span {
     font-size: 12px;
     margin-top: 4px;
     color: #428EFF;
+    font-family: "inter", sans-serif;
 }
 .latestBox>div i {
     position: absolute;
@@ -354,7 +366,8 @@ header .box2>.email p {
     font-weight: normal;
 }
 .about .graph {
-    width: 1024px;
+    width: 100%;
+    max-width: 1024px;
     height: 320px;
     margin: 0 auto;
     display: flex;
@@ -372,6 +385,8 @@ header .box2>.email p {
     height: 100%;
     margin-left: 16px;
     position: relative;
+    left: 0;
+    top: 0;
 }
 .about .graph .level_line .line {
     width: 100%;
@@ -381,11 +396,13 @@ header .box2>.email p {
 }
 .about .graph .level_line .stick {
     position: absolute;
+    width: 100%;
     height: 100%;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
     display: flex;
+    justify-content: center;
     align-items: flex-end;
 }
 .about .graph .level_line .stick>div {
@@ -476,55 +493,55 @@ header .box2>.email p {
 .portfolio .prothum {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 40px;
 }
 .portfolio .prothum article {
-    width: 33.3333%;
+    width: 30%;
     height: 572px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    margin: 0 40px;
 }
 .portfolio .prothum article .mockup {
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .portfolio .prothum article .mockup .mockup01 {
-    display: flex;
-    justify-content: center;
+    position: relative;
 }
 .portfolio .prothum article .mockup .mockup01>img {
-    position: relative;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
 .portfolio .prothum article .mockup .mockup01 .imgBox {
-    width: 143px;
-    height: 254px;
+    width: 142px;
+    height: 253px;
     overflow: hidden;
     background-color: #428EFF;
     position: absolute;
-    margin-left: -2px;
-    margin-top: 3px;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .portfolio .prothum article .mockup .mockup01 .imgBox img {
-    width: 143px;
-    top: 0;
-    left: 0;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
     transition: all ease-in-out 1.5s;
 }
-.portfolio .prothum article:nth-child(1) .mockup:hover .imgBox img {
+.portfolio .prothum article:nth-child(1) .mockup:hover .imgBox img{
     transform: translateY(-548px);
 }
-.portfolio .prothum article:nth-child(2) .mockup:hover .imgBox img {
-    transform: translateY(-509px);
+.portfolio .prothum article:nth-child(2) .mockup:hover .imgBox img{
+    transform: translateY(-480px);
 }
-.portfolio .prothum article:nth-child(3) .mockup:hover .imgBox img {
+.portfolio .prothum article:nth-child(3) .mockup:hover .imgBox img{
     transform: translateY(-145px);
 }
 .portfolio .prothum article h3 {
@@ -907,7 +924,7 @@ footer p {
         height: 100vw;
     }
     .LatestWork .line {
-        width: 30%;
+        width: 35%;
     }
     .LatestWork {
         margin-top: 24px;
@@ -922,14 +939,20 @@ footer p {
     .latestBox>div {
         width: 100%;
         height: 80px;
-        margin: 4px 5%;
+        margin: 4px 0;
         padding: 4px;
         display: flex;
     }
     .latestBox>div .imgBox {
-        width: 70px;
-        height: 70px;
+        width: 67px;
+        height: 100%;
         border-radius: 10px;
+        flex-shrink: 0;
+    }
+    .latestBox>div .imgBox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     .latestBox>div .txt {
         margin-left: 16px;
@@ -1069,6 +1092,8 @@ footer p {
     .mainImg .rightBox .tablet {
         display: block;
     }
+    /* home */
+
     /* about */
     .about .graph {
         width: 100%;
@@ -1088,9 +1113,10 @@ footer p {
         height: 86px;
     }
     .portfolio .prothum {
-        width: 100vw;
+        width: 100%;
+        justify-content: space-between;
     }
     .portfolio .prothum article {
-        width: 33.3333vw;
+        margin: 0;
     }
 }
