@@ -136,6 +136,48 @@ $(document).ready(function(){
         $('header .box1').css('background-color','#C10C1A')
         $('header .box2').css('background-color','#FFFAEE')
     })
+    // 모바일 또는 태블릿인지 판별
+    function isMobileDevice() {
+      return /Android|iPhone|iPad|iPod|Tablet|Mobile/i.test(navigator.userAgent);
+    }
+  
+    if (isMobileDevice()) {
+      var projectWrap = document.querySelector('.wrap');
+      var hammer = new Hammer(projectWrap);
+  
+      hammer.on('swipeleft', function() {
+          if ($('.project01').hasClass('on')) {
+              $('.wrap>div').removeClass('on');
+              $('.wrap .project02').addClass('on');
+              $('body').css('background-color', '#C10C1A');
+              $('header .box1').css('background-color', '#C10C1A');
+              $('header .box2').css('background-color', '#FFFAEE');
+          } else if ($('.project02').hasClass('on')) {
+              $('.wrap>div').removeClass('on');
+              $('.wrap .project03').addClass('on');
+              $('body').css('background-color', '#66655D');
+              $('header .box1').css('background-color', '#66655D');
+              $('header .box2').css('background-color', '#FBFBFA');
+          }
+      });
+  
+      hammer.on('swiperight', function() {
+          if ($('.project03').hasClass('on')) {
+              $('.wrap>div').removeClass('on');
+              $('.wrap .project02').addClass('on');
+              $('body').css('background-color', '#C10C1A');
+              $('header .box1').css('background-color', '#C10C1A');
+              $('header .box2').css('background-color', '#FFFAEE');
+          } else if ($('.project02').hasClass('on')) {
+              $('.wrap>div').removeClass('on');
+              $('.wrap .project01').addClass('on');
+              $('body').css('background-color', '#3787FF');
+              $('header .box1').css('background-color', '#3787FF');
+              $('header .box2').css('background-color', '#F9FBFF');
+          }
+      });
+    }
+
 
     // 깃허브페이지 연결
     $('.project01 .gitadd').on('click', function() {

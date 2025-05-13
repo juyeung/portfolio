@@ -467,7 +467,6 @@ header .box2>.email p {
     box-sizing: border-box;
     text-align: center;
     margin-top: 80px;
-    padding-bottom: 40px;
 }
 .portfolio h2 {
     font-size: 72px;
@@ -567,6 +566,8 @@ article a:hover {
     height: 100%;
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
     margin-top: 80px;
+    padding: 56px 5%;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
 }
@@ -575,6 +576,8 @@ article a:hover {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 .container img {}
 .figmalink {
@@ -617,15 +620,15 @@ article a:hover {
     background-color: #FBFBFA;
 }
 
-.project01 .gitadd:hover p:nth-child(2) {
+.project01 .gitadd:hover p {
     color: #3787FF;
     border-bottom: 1px solid #3787FF;
 }
-.project02 .gitadd:hover p:nth-child(2) {
+.project02 .gitadd:hover p {
     color: #FFC700;
     border-bottom: 1px solid #FFC700;
 }
-.project03 .gitadd:hover p:nth-child(2) {
+.project03 .gitadd:hover p {
     color: #E32B30;
     border-bottom: 1px solid #E32B30;
 }
@@ -644,13 +647,13 @@ article a:hover {
 .project02 .move .right {
     position: fixed;
     top: 50%;
-    right: 80px;
+    right: 5%;
     transform: translateY(-50%);
 }
 .project03 .move .left {
     position: fixed;
     top: 50%;
-    left: 80px;
+    left: 5%;
     transform: translateY(-50%);
 }
 .pro .move>div {
@@ -1026,6 +1029,21 @@ footer p {
     }
     .portfolio .prothum article h3 {
         height: 86px;
+    }
+
+    /* project */
+    .container {
+        width: 100%;
+    }
+    .container img {
+        width: 100vw;
+    }
+    .gitadd {
+        left: 0;
+        top: 0;
+    }
+    .project01 .move {
+        display: none;
     }
 }
 
