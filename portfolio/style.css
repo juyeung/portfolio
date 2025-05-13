@@ -188,20 +188,20 @@ header .box2>.email p {
 
 .mainImg .leftBox .desk {
     background-color: #fff;
-    width: 100vw;
+    width: 100%;
     height: auto;
     max-width: 1440px;
 }
 .mainImg .leftBox .tablet {
     background-color: #fff;
-    width: 100vw;
+    width: 100%;
     height: auto;
     max-width: 767px;
     display: none;
 }
 .mainImg .leftBox .mobile {
     background-color: #fff;
-    width: 100vw;
+    width: 100%;
     height: auto;
     max-width: 610px;
     display: none;
@@ -223,19 +223,19 @@ header .box2>.email p {
 }
 
 .mainImg .rightBox .desk {
-    width: 100vw;
+    width: 100%;
     height: auto;
     max-width: 1440px;
     display: block;
 }
 .mainImg .rightBox .tablet {
-    width: 100vw;
+    width: 100%;
     height: auto;
     max-width: 767px;
     display: none;
 }
 .mainImg .rightBox .mobile {
-    width: 100vw;
+    width: 100%;
     height: auto;
     max-width: 610px;
     display: none;
