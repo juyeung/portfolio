@@ -722,23 +722,32 @@ footer p {
 }
 
 /* 반응형 ======================================================================== */
-.mainImg .swipe {
+.swipe {
     position: absolute;
-    width: 100px;
+    width: 40px;
     height: 40px;
     left: 50%;
     transform: translateX(-50%);
     bottom: 5%;
-    background-color: #3787FF;
 }
-.mainImg .swipe>div {
+.swipe div {
+    position: absolute;
+    width: 40px;
+    animation: sw 3s linear infinite;
+}
+@keyframes sw {
+    0% {transform: translateX(0); opacity: 1;}
+    50% {transform: translateX(-100%); opacity: 0;}
+    50.00001% {transform: translateX(100%); opacity: 0;}
+    100% {transform: translateX(0); opacity: 1;}
+}
+.swipe div div {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.25);
     border: 1px solid #fff;
     box-sizing: border-box;
-    padding: 1px;
 }
 
 .m_nav {
@@ -902,7 +911,7 @@ footer p {
         display: block;
     }
     .mainImg {
-        height: 400px;
+        height: 300px;
     }
     .LatestWork .line {
         width: 30%;
