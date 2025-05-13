@@ -474,6 +474,7 @@ header .box2>.email p {
     font-weight: normal;
 }
 .portfolio .prothum {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 40px;
@@ -936,6 +937,9 @@ footer p {
     .latestBox>div p {
         margin: 0;
     }
+    .latestBox>div i {
+        display: none;
+    }
     .latestBox>div .imgBox img {
         height: 100%;
     }
@@ -1036,7 +1040,7 @@ footer p {
         width: 100%;
     }
     .container img {
-        width: 100vw;
+        width: 100%;
     }
     .gitadd {
         left: 0;
@@ -1060,5 +1064,29 @@ footer p {
     }
     .mainImg .rightBox .tablet {
         display: block;
+    }
+    /* about */
+    .about .graph {
+        width: 100%;
+    }
+    .about .graph .level_line .stick {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about .graph .level_line .stick>div {
+        width: 88px;
+        margin: 0 8px;
+        padding: 20px 12px;
+    }
+    /* portfolio */
+    .portfolio .prothum article h3 {
+        height: 86px;
+    }
+    .portfolio .prothum {
+        width: 100vw;
+    }
+    .portfolio .prothum article {
+        width: 33.3333vw;
     }
 }
