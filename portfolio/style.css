@@ -936,6 +936,10 @@ footer p {
     }
     .latestBox>div p {
         margin: 0;
+        font-size: 16px;
+    }
+    .latestBox>div span {
+        font-size: 14px;
     }
     .latestBox>div i {
         display: none;
