@@ -150,16 +150,16 @@ function updateSlide(index) {
   const prev = (index + total - 1) % total;
   const next = (index + 1) % total;
 
-  $(".slide").removeClass("prev active next");
-  $(".slide" + prev).addClass("prev");
-  $(".slide" + index).addClass("active");
-  $(".slide" + next).addClass("next");
+  $(".story .slide").removeClass("prev active next");
+  $(".story .slide" + prev).addClass("prev");
+  $(".story .slide" + index).addClass("active");
+  $(".story .slide" + next).addClass("next");
 
-  $(".text").removeClass("active");
-  $(".text" + index).addClass("active");
+  $(".story .text").removeClass("active");
+  $(".story .text" + index).addClass("active");
 
-  $(".dot").removeClass("active");
-  $(".dot").eq(index).addClass("active");
+  $(".story .dot").removeClass("active");
+  $(".story .dot").eq(index).addClass("active");
 }
 
 // 슬라이드는 container 내부에서만 작동
@@ -184,7 +184,7 @@ $(".story .container").on("wheel", function (e) {
 });
 
 // navigator dot 클릭 시에도 반응
-$(".dot").on("click", function() {
+$(".story .dot").on("click", function() {
   const index = $(this).index();
   current = index;
   updateSlide(current);
@@ -385,6 +385,46 @@ $slider.on('mousemove touchmove', function(e) {
   const x = e.pageX || e.originalEvent.touches[0].pageX;
   const walk = (x - startX) * 1.5;
   this.scrollLeft = scrollLeft - walk;
+});
+
+// 테마존 아코디언 ##########################################
+$(function () {
+  const liMinHeight = 100;
+
+  $(".theme_02 .pro ul li").on("click", function (e) {
+    e.stopPropagation();
+
+    const $this = $(this);
+    const isOpen = $this.hasClass("on");
+
+    // 모두 닫기
+    $(".theme_02 .pro ul li").removeClass("on").css("height", liMinHeight);
+    $(".theme_02 .pro ul li i").removeClass("rotate");
+
+    // 이미 열려 있던 경우면 여기서 종료
+    if (isOpen) return;
+
+    // 열릴 항목 설정
+    $this.addClass("on");
+
+    // 실제 내용의 높이 계산
+    const articleHeight = $this.find("article").outerHeight(true);
+    const moreHeight = $this.find(".text_more").outerHeight(true);
+    const padding = 24; // 여백 보정
+    const fullHeight = articleHeight + moreHeight + padding;
+
+    // 높이 적용
+    $this.css("height", fullHeight);
+
+    // 아이콘 회전
+    $this.find("i").addClass("rotate");
+  });
+
+  // 바깥 클릭 시 닫기
+  $(document).on("click", function () {
+    $(".theme_02 .pro ul li").removeClass("on").css("height", liMinHeight);
+    $(".theme_02 .pro ul li i").removeClass("rotate");
+  });
 });
 
     
