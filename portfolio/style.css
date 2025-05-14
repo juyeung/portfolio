@@ -30,6 +30,7 @@ body {
     letter-spacing: -2.5%;
     color: #332E2A;
     margin: 0 auto;
+    font-family: "inter", sans-serif;
 }
 .wrap>div {
     display: none;
@@ -546,6 +547,7 @@ header .box2>.email p {
 .portfolio .prothum article h3 {
     font-size: 32px;
     text-align: center;
+    line-height: 1;
 }
 .portfolio .prothum article .mockup span {
     font-size: 14px;
@@ -553,14 +555,17 @@ header .box2>.email p {
 }
 article a {
     color: #3787FF;
-    margin-top: 12px;
+    height: 40px;
+    padding: 12px 0;
+    margin-top: 4px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
 }
 article a:hover {
     text-decoration: underline;
 }
 .portfolio .prothum article p {
     font-size: 16px;
-    margin-top: 24px;
     line-height: 140%;
 }
 .portfolio .prothum article em {
@@ -1062,9 +1067,6 @@ footer p {
         height: 620px;
         margin-bottom: 40px;
     }
-    .portfolio .prothum article h3 {
-        height: 86px;
-    }
 
     /* project */
     .container {
@@ -1120,9 +1122,6 @@ footer p {
         padding: 20px 12px;
     }
     /* portfolio */
-    .portfolio .prothum article h3 {
-        height: 86px;
-    }
     .portfolio .prothum {
         width: 100%;
         justify-content: space-between;
@@ -1150,5 +1149,20 @@ footer p {
     }
     .figmalink {
         display: none;
+    }
+}
+/* 1440px 이상 */
+@media (min-width: 1440px) {
+    .swipe {
+        display: none;
+    }
+}
+/* 1920px 이상 */
+@media (min-width: 1920px) {
+    .mainImg {
+        height: 50vh;
+    }
+    .about, .portfolio {
+        padding-top: 120px;
     }
 }
