@@ -414,8 +414,7 @@ header .box2>.email p {
     align-items: center;
     justify-content: flex-end;
     color: #ffffff;
-    text-shadow: 
-    0px -1px 0 #666;
+    text-shadow: 0px -1px 0 #666;
     font-weight: 600;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -638,18 +637,6 @@ article a:hover {
     background-color: #FBFBFA;
 }
 
-.project01 .gitadd:hover p {
-    color: #3787FF;
-    border-bottom: 1px solid #3787FF;
-}
-.project02 .gitadd:hover p {
-    color: #FFC700;
-    border-bottom: 1px solid #FFC700;
-}
-.project03 .gitadd:hover p {
-    color: #E32B30;
-    border-bottom: 1px solid #E32B30;
-}
 .project01 .move .right {
     position: fixed;
     top: 50%;
@@ -1068,12 +1055,11 @@ footer p {
     }
     .container img {
         width: 100%;
-        margin-top: 80px;
     }
     .gitadd {
         left: 50%;
         transform: translateX(-50%);
-        top: 0;
+        top: 5%;
         border-radius: 10px;
         width: 200px;
         height: 48px;
@@ -1082,8 +1068,14 @@ footer p {
         justify-content: center;
         align-items: center;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        text-shadow: 0px -1px 0 #666;
+        position: fixed;
     }
     .pro .move {
+        display: none;
+    }
+    .figmalink {
         display: none;
     }
 }
@@ -1128,5 +1120,51 @@ footer p {
     }
     .portfolio .prothum article {
         margin: 0;
+    }
+    /* project */
+    .container {
+        width: 100%;
+    }
+    .container img {
+        width: 100%;
+    }
+    .gitadd {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10%;
+        border-radius: 10px;
+        width: 200px;
+        height: 48px;
+        background-color: #60BCFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        text-shadow: 0px -1px 0 #666;
+        position: fixed;
+    }
+    .pro .move {
+        display: none;
+    }
+    .figmalink {
+        left: 6%;
+        top: 200px;
+    }
+}
+
+/* pc */
+@media (min-width: 1024px) {
+    .project01 .gitadd:hover p {
+        color: #3787FF;
+        border-bottom: 1px solid #3787FF;
+    }
+    .project02 .gitadd:hover p {
+        color: #FFC700;
+        border-bottom: 1px solid #FFC700;
+    }
+    .project03 .gitadd:hover p {
+        color: #E32B30;
+        border-bottom: 1px solid #E32B30;
     }
 }
