@@ -4,9 +4,7 @@
 
 /* 전체설정 */
 body {
-    overflow-x: hidden;
     font-family: "Inter";
-    margin: 0 auto;
 }
 
 * {
@@ -59,8 +57,11 @@ video {
 
 .header .logo a {}
 
-.header .logo a img {
-    width: 193px;
+.header .logo a .pc {
+    width: 100%;
+}
+.header .logo a .m {
+    display: none;
 }
 
 .header .navi {
@@ -2637,6 +2638,14 @@ footer {
 /* 반응형 리사이징 */
 /* 태블릿 이하 */
 @media (max-width: 1439px) {
+    /* header */
+    .header .logo a .pc {
+        display: none;
+    }
+    .header .logo a .m {
+        display: block;
+    }
+
     /* 랜딩페이지 */
     .landing {
         width: 100%;
