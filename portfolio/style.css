@@ -6,6 +6,7 @@
     font-weight: normal; /* 폰트 굵기 설정 */
     font-style: normal; /* 폰트 스타일 설정 */
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* resetCSS */
 * {
@@ -169,7 +170,6 @@ header .box2>.email p {
     position: relative;
 }
 .mainImg img {
-    width: 100%;
     padding: 0 5%;
 }
 
@@ -582,25 +582,27 @@ article a:hover {
     transition: all 0.8s;
     height: 100%;
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
-    margin-top: 80px;
     padding: 56px 5%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
 }
 .container {
-    width: 1440px;
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
-.container img {}
+.container img {
+    width: 100%;
+}
 .figmalink {
     position: absolute;
     width: auto;
-    left: 350px;
+    left: 260px;
     top: 367px;
     cursor: pointer;
     font-weight: 600;
@@ -616,15 +618,29 @@ article a:hover {
 }
 .gitadd {
     position: absolute;
-    width: auto;
-    left: 85px;
+    left: 0;
     top: 400px;
     cursor: pointer;
     font-weight: 600;
-    text-align: left;
+    border-radius: 10px;
+    width: 200px;
+    height: 48px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    color: #111;
+    transition: all 0.2s;
 }
+.gitadd:hover {
+    background-color: #57ACF6;
+    color: #fff;
+}
+
 .gitadd p {
     font-size: 14px;
+    font-family: "inter", sans-serif;
     margin: 4px 0;
 }
 .project01 {
@@ -883,7 +899,7 @@ footer p {
 
 /* 반응형 미디어쿼리 */
 /* 모바일 */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     /* home */
     header {
         display: none;
@@ -908,7 +924,8 @@ footer p {
         display: block;
     }
     .mainImg {
-        height: 100vw;
+        height: 70vw;
+        min-height: 330px;
     }
     .LatestWork .line {
         width: 35%;
@@ -1060,17 +1077,9 @@ footer p {
         left: 50%;
         transform: translateX(-50%);
         top: 5%;
-        border-radius: 10px;
-        width: 200px;
-        height: 48px;
-        background-color: #60BCFF;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-        color: #fff;
-        text-shadow: 0px -1px 0 #666;
         position: fixed;
+        background-color: #57ACF6;
+        color: #fff;
     }
     .pro .move {
         display: none;
@@ -1081,7 +1090,7 @@ footer p {
 }
 
 /* 태블릿 */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
     .mainImg .leftBox .desk {
         display: none;
     }
@@ -1131,40 +1140,15 @@ footer p {
     .gitadd {
         left: 50%;
         transform: translateX(-50%);
-        top: 10%;
-        border-radius: 10px;
-        width: 200px;
-        height: 48px;
-        background-color: #60BCFF;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-        color: #fff;
-        text-shadow: 0px -1px 0 #666;
+        top: 100px;
         position: fixed;
+        background-color: #57ACF6;
+        color: #fff;
     }
     .pro .move {
         display: none;
     }
     .figmalink {
-        left: 6%;
-        top: 200px;
-    }
-}
-
-/* pc */
-@media (min-width: 1024px) {
-    .project01 .gitadd:hover p {
-        color: #3787FF;
-        border-bottom: 1px solid #3787FF;
-    }
-    .project02 .gitadd:hover p {
-        color: #FFC700;
-        border-bottom: 1px solid #FFC700;
-    }
-    .project03 .gitadd:hover p {
-        color: #E32B30;
-        border-bottom: 1px solid #E32B30;
+        display: none;
     }
 }
