@@ -1250,7 +1250,7 @@ nav .menu ul li .title>p {
 .theme_02 {
     width: 100%;
     height: auto;
-    padding: 80px 5%;
+    padding: 60px 5%;
     display: none;
     box-sizing: border-box;
 }
@@ -1285,7 +1285,7 @@ nav .menu ul li .title>p {
 .theme_02 .title_inner .sub p {
     width: auto;
     color: #666666;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     font-family: "Inter";
     letter-spacing: -2.5;
@@ -1381,7 +1381,7 @@ nav .menu ul li .title>p {
 .ticket {
     width: 100%;
     padding: 60px 5%;
-    height: 1000px;
+    height: 1024px;
     box-sizing: border-box;
 }
 
@@ -1422,6 +1422,9 @@ nav .menu ul li .title>p {
 
 .ticket .listBox {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ticket .listBox .list {
@@ -1434,7 +1437,6 @@ nav .menu ul li .title>p {
 }
 
 .ticket .listBox .list>li {
-    margin: 0 12px;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -1449,6 +1451,7 @@ nav .menu ul li .title>p {
 .ticket .textBox {
     width: 100%;
     text-align: center;
+    margin-top: 72px;
 }
 
 .ticket .textBox p {
@@ -1456,7 +1459,6 @@ nav .menu ul li .title>p {
     font-size: 28px;
     font-weight: normal;
     font-family: "Jua", serif;
-    margin-top: 72px;
     background: linear-gradient(to right, #26D6E2, #BF47E8);
     -webkit-background-clip: text;
     color: transparent;
@@ -1761,23 +1763,8 @@ nav .menu ul li .title>p {
 .ticket .listBox .list .book .date .title p {
     font-size: 16px;
     font-weight: normal;
-    font-family: '맑은 고딕', serif;
+    font-family: "inter";
     padding-left: 16px;
-}
-.ticket .listBox .list .book .date>p {
-    display: flex;
-    margin-top: 16px;
-    border: 1px solid #e3e3e3;
-    border-radius: 5px;
-    width: 260px;
-    height: 40px;
-    background-color: #fff;
-    justify-content: center;
-    align-items: center;
-    color: #3a3a3a;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: "Inter", serif;
 }
 
 /* 달력 스타일 ################################################# */
@@ -1793,9 +1780,79 @@ nav .menu ul li .title>p {
     font-weight: bold;
     font-family: "Inter", sans-serif !important;
     text-align: center;
-  }
+}
+.book .people .title {
+    display: flex;
+    margin-top: 44px;
+    align-items: center;
+}
+.book .people .title img {
+    width: 19px;
+    height: 18px;
+}
 
-  /* datepicker 팝업 내부까지 폰트 적용 */
+.book .people .title p {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Inter";
+    padding-left: 16px;
+}
+
+.book .people>ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 8px;
+}
+
+.book .people>ul>li {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.book .people ul li .sub {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Inter";
+}
+
+.book .people ul li .box {
+    display: flex;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 162px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: '맑은 고딕', serif;
+    margin-left: 12px;
+}
+.book .people ul li .box .minus {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 8px;
+    margin: 0 16px;
+}
+.book .people ul li .box .count {
+    margin: 0 4px;
+}
+.book .people ul li .box .plus {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 8px;
+    margin: 0 16px;
+}
+.book .button {
+    width: 260px;
+}
+
+/* datepicker 팝업 내부까지 폰트 적용 ############### */
 .ui-datepicker, .ui-datepicker * {
     font-family: 'Inter', sans-serif !important;
 }
@@ -1843,7 +1900,7 @@ nav .menu ul li .title>p {
 .ui-datepicker table {
     width: 100%; /* 팝업 너비에 맞춤 */
     border-collapse: collapse;
-  }
+}
 
 
 .ui-datepicker-title {
@@ -1851,15 +1908,15 @@ nav .menu ul li .title>p {
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
-  }
+}
 
 .ui-datepicker-prev {
     order: -1;
-  }
+}
 
 .ui-datepicker-next {
     order: 1;
-  }
+}
 
 .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
     top: 8px;
@@ -1869,83 +1926,14 @@ nav .menu ul li .title>p {
     line-height: 32px;
     padding: 0.3em;
     cursor: pointer;
-  }
+}
   
 .ui-datepicker .ui-datepicker-prev i, .ui-datepicker .ui-datepicker-next i {
     font-size: 18px;
     color: #333;
-  }
+}
+/* datepicker 설정 끝 ############################### */
 
-.ticket .listBox .list .book .people .title {
-    display: flex;
-    margin-top: 44px;
-    align-items: center;
-}
-.ticket .listBox .list .book .people .title img {
-    width: 19px;
-    height: 18px;
-}
-
-.ticket .listBox .list .book .people .title p {
-    font-size: 16px;
-    font-weight: normal;
-    font-family: "Inter";
-    padding-left: 16px;
-}
-
-.ticket .listBox .list .book .people>ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 8px;
-}
-
-.ticket .listBox .list .book .people>ul>li {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-}
-
-.ticket .listBox .list .book .people ul li .sub {
-    color: #3a3a3a;
-    font-size: 16px;
-    font-weight: normal;
-    font-family: "Inter";
-}
-
-.ticket .listBox .list .book .people ul li .box {
-    display: flex;
-    border: 1px solid #e3e3e3;
-    border-radius: 5px;
-    background-color: #fff;
-    width: 162px;
-    height: 32px;
-    justify-content: center;
-    align-items: center;
-    color: #3a3a3a;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: '맑은 고딕', serif;
-    margin-left: 12px;
-}
-.people ul li .box .minus {
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0 8px;
-    margin: 0 16px;
-}
-.people ul li .box .count {
-    margin: 0 4px;
-}
-.people ul li .box .plus {
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0 8px;
-    margin: 0 16px;
-}
-.book .button {
-    width: 260px;
-}
 .gray {
     opacity: 0.5;
     pointer-events: none;
@@ -2744,7 +2732,186 @@ footer {
     }
 
     /* 티켓예매 */
-
+    .ticket {
+        width: 100%;
+        height: auto;
+        padding: 80px 5%;
+        box-sizing: border-box;
+    }
+    .ticket .title_inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .ticket .title_inner h2 {
+        width: 100%;
+        color: #3a3a3a;
+        font-size: 48px;
+        font-weight: normal;
+        font-family: "Black Han Sans", serif;
+        line-height: 40px;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        padding-top: 4px;
+    }
+    .ticket .title_inner .sub {
+        width: 100%;
+        margin: 0;
+        margin-top: 16px;
+    }
+    
+    .ticket .title_inner .sub h3 {
+        width: 100%;
+        color: #3a3a3a;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Inter";
+    }
+    
+    .ticket .title_inner .sub p {
+        width: auto;
+        color: #666666;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: "Inter";
+        letter-spacing: -2.5;
+        line-height: 140%;
+        margin-top: 8px;
+    }
+    .ticket .listBox {
+        justify-content: flex-start;
+    }
+    .ticket .listBox .list {
+        width: auto;
+    }
+    .ticket .listBox .list>li{
+        margin: 0 24px;
+    }
+    .ticket .listBox .list .book {
+        display: none;
+    }
+    .ticket .navigator {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 32px 0;
+    }
+    .ticket .dot {
+        width: 8px;
+        height: 8px;
+        background: #ccc;
+        border-radius: 50%;
+        transition: background 0.3s;
+        cursor: pointer;
+    }
+    .ticket .dot.active {
+        background: #3787ff;
+    }
+    .book_m {
+        display: block;
+    }
+    .book_m .date .title {
+        display: flex;
+        margin-top: 20px;
+        align-items: center;
+    }
+    .book_m .date .title img {
+        width: 18px;
+        height: 20px;
+    }
+    .book_m .date .title p {
+        font-size: 16px;
+    font-weight: normal;
+    font-family: "inter";
+    padding-left: 16px;
+    }
+    .book_m input {
+        margin-top: 16px;
+        border: 1px solid #e3e3e3;
+        border-radius: 5px;
+        width: 260px;
+        height: 32px;
+        background-color: #fff;
+        color: #3a3a3a;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: "Inter", sans-serif !important;
+        text-align: center;
+    }
+    .book_m .people {
+        width: 100%;
+    }
+    .book_m .people .title {
+        display: flex;
+        margin-top: 44px;
+        align-items: center;
+    }
+    .book_m .people .title img {
+        width: 19px;
+        height: 18px;
+    }
+    
+    .book_m .people .title p {
+        font-size: 16px;
+        font-weight: normal;
+        font-family: "Inter";
+        padding-left: 16px;
+    }
+    .book_m .people ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+    
+    .book_m .people ul li {
+        width: 50%;
+        /* display: flex;
+        align-items: center; */
+        margin: 8px 0;
+    }
+    
+    .book_m .people ul li .sub {
+        color: #3a3a3a;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: "Inter";
+    }
+    
+    .book_m .people ul li .box {
+        display: flex;
+        border: 1px solid #e3e3e3;
+        border-radius: 5px;
+        background-color: #fff;
+        width: 90%;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        color: #3a3a3a;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: '맑은 고딕', serif;
+    }
+    .book_m .people ul li .box .minus {
+        font-size: 14px;
+        cursor: pointer;
+        padding: 0 8px;
+        margin: 0 16px;
+    }
+    .book_m .people ul li .box .count {
+        margin: 0 4px;
+    }
+    .book_m .people ul li .box .plus {
+        font-size: 14px;
+        cursor: pointer;
+        padding: 0 8px;
+        margin: 0 16px;
+    }
+    .book_m .button {
+        width: 260px;
+    }
+    .ticket .textBox {
+        margin: 0;
+    }
     /* 오시는길 */
     .way {
         display: none;
@@ -2753,25 +2920,6 @@ footer {
 
   /* 태블릿 */
   @media (max-width: 1024px) {
-    /* 예매 */
-    .ticket .list {
-      display: flex;
-      overflow-x: auto;
-      gap: 16px;
-      padding: 0 16px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-  
-    .ticket .list li {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-    }
-  
-    .ticket .list li.book {
-      display: none; /* 슬라이드에서 숨김 */
-    }
   }
   /* pc */
     @media (min-width: 1440px){
@@ -2798,9 +2946,9 @@ footer {
             margin: 0;
             margin-bottom: 40px;
         }
+        .book_m {
+            display: none;
+        }
     }
     
-  
-  
-  
-  
+ 
