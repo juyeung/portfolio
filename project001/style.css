@@ -2792,19 +2792,29 @@ footer {
     .ticket .listBox .list {
         /* width: auto; */
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        /* flex-wrap: nowrap; */
+        white-space: nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         gap: 16px;
         padding: 0 5%;
     }
     .ticket .listBox .list>li{
+        /* display: inline-block; */
         margin: 0 24px;
+        /* margin-right: 20px; */
         flex-shrink: 0;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
         width: 300px; /* 필요 시 조정 */
+        transition: transform 0.3s ease;
     }
+    .listBox .list>li.gray {
+        filter: none !important;
+        opacity: 1 !important;
+      }
+
     .ticket .listBox .list .book {
         display: none;
     }

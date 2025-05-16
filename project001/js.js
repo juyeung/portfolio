@@ -211,24 +211,34 @@ $('.box').each(function () {
 });
 // 예매티켓 클릭 시 필터 적용
 // 리스트 항목 클릭 시 회색 처리
-$(".listBox .list > li").on("click", function (e) {
-  // .book은 선택 제외 (데스크탑용 예약 박스)
-  if ($(this).hasClass("book")) return;
+function isMobile() {
+  return window.innerWidth <= 1024; // 모바일/태블릿 기준
+}
 
+// PC에서: 클릭한 티켓만 selected
+$('.listBox .list > li').on('click', function (e) {
+  if (isMobile()) return; // 모바일에서는 무시
+
+  if ($(this).hasClass('book')) return;
   e.stopPropagation();
 
-  // .book 제외하고 모두 비활성화
-  $(".listBox .list > li").not(this).not(".book").removeClass("selected").addClass("gray");
-  $(this).addClass("selected").removeClass("gray");
+  $('.listBox .list > li').not(this).not('.book')
+    .removeClass('selected')
+    .addClass('gray');
+
+  $(this).addClass('selected').removeClass('gray');
 });
 
-// 바깥 클릭 시 초기화 (.book 내부 클릭 제외)
-$(document).on("click", function (e) {
+// 바깥 클릭 시 초기화 (PC 전용)
+$(document).on('click', function (e) {
+  if (isMobile()) return;
+
   const $target = $(e.target);
   if ($target.closest(".book").length || $target.closest(".listBox .list>li").length) return;
 
   $(".listBox .list>li").removeClass("gray selected");
 });
+
 
 
 // 예매팝업
@@ -278,6 +288,61 @@ $(".book .button, .book_m .button").on("click", function () {
 $(".pop .button").on("click", function () {
   $(".pop").fadeOut();
 });
+
+// 티켓 스와이프
+let scrollTimer;
+
+$('.ticket .list').on('scroll', function () {
+  clearTimeout(scrollTimer);
+
+  scrollTimer = setTimeout(function () {
+    const $container = $('.ticket .list');
+    const scrollLeft = $container.scrollLeft();
+    const containerWidth = $container.outerWidth();
+    const containerCenter = scrollLeft + containerWidth / 2;
+
+    let closestDiff = Infinity;
+    let $closest = null;
+
+    $container.find('li').each(function () {
+      const $li = $(this);
+      const liLeft = $li.position().left;
+      const liCenter = liLeft + $li.outerWidth() / 2;
+      const diff = Math.abs(containerCenter - liCenter);
+
+      if (diff < closestDiff) {
+        closestDiff = diff;
+        $closest = $li;
+      }
+    });
+
+    if ($closest) {
+      // 중앙 정렬: 현재 scrollLeft + (li 중심 - container 중심)
+      const liCenter = $closest.position().left + $closest.outerWidth() / 2;
+      const moveTo = scrollLeft + (liCenter - containerWidth / 2);
+      $container.stop().animate({ scrollLeft: moveTo }, 300);
+
+      // 선택 클래스 처리
+      $container.find('li').removeClass('selected');
+      $closest.addClass('selected');
+
+      if ($closest) {
+        const liCenter = $closest.position().left + $closest.outerWidth() / 2;
+        const moveTo = scrollLeft + (liCenter - containerWidth / 2);
+      
+        $container.stop().animate({ scrollLeft: moveTo }, 300);
+      
+        // 모바일일 경우 자동 선택 처리
+        if (isMobile()) {
+          $container.find('li').removeClass('selected');
+          $closest.addClass('selected');
+        }
+      }
+      
+    }
+  }, 100); // 스크롤 멈춘 뒤 100ms 후 작동
+});
+
 
 // 티켓 스와이프 시 네비게이터 작동
 $(function() {
