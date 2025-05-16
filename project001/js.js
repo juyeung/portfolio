@@ -212,7 +212,7 @@ $('.box').each(function () {
 // 예매티켓 클릭 시 필터 적용
 // 리스트 항목 클릭 시 회색 처리
 function isMobile() {
-  return window.innerWidth <= 1024;
+  return window.innerWidth <= 1439;
 }
 
 // PC 클릭 이벤트
@@ -289,34 +289,50 @@ $(".pop .button").on("click", function () {
 });
 
 // 티켓 스와이프
+function isMobile() {
+  return window.innerWidth <= 1439; // 필요 시 값 조절하세요
+}
+
 const $container = $('.ticket .list');
 let isDragging = false;
 let startX, scrollLeft;
 
-if (isMobile()) {
-  $container.on('touchstart mousedown', function (e) {
-    isDragging = true;
-    startX = e.pageX || e.originalEvent.touches[0].pageX;
-    scrollLeft = $container.scrollLeft();
-    $container.addClass('dragging');
-  });
+// 터치/마우스 드래그 시작
+$container.on('touchstart mousedown', function (e) {
+  if (!isMobile()) return; // 모바일에서만 동작
 
-  $(document).on('touchmove mousemove', function (e) {
-    if (!isDragging) return;
+  isDragging = true;
+  startX = e.pageX || e.originalEvent.touches[0].pageX;
+  scrollLeft = $container.scrollLeft();
+  $container.addClass('dragging');
+});
+
+// 터치/마우스 드래그 이동
+$(document).on('touchmove mousemove', function (e) {
+  if (!isDragging) return;
+
+  const x = e.pageX || (e.originalEvent.touches && e.originalEvent.touches[0].pageX);
+  if (x === undefined) return;
+
+  const walk = startX - x;
+  $container.scrollLeft(scrollLeft + walk);
+
+  // 모바일 터치 스크롤 막기
+  if (e.type === "touchmove") {
     e.preventDefault();
-    const x = e.pageX || e.originalEvent.touches[0].pageX;
-    const walk = startX - x;
-    $container.scrollLeft(scrollLeft + walk);
-  });
+  }
+});
 
-  $(document).on('touchend mouseup', function () {
-    if (!isDragging) return;
-    isDragging = false;
-    $container.removeClass('dragging');
-    snapToClosest();
-  });
-}
+// 터치/마우스 드래그 종료
+$(document).on('touchend mouseup', function () {
+  if (!isDragging) return;
 
+  isDragging = false;
+  $container.removeClass('dragging');
+  snapToClosest();
+});
+
+// 가장 가까운 티켓으로 스냅 및 선택 처리 함수
 function snapToClosest() {
   const scrollLeft = $container.scrollLeft();
   const containerWidth = $container.outerWidth();
@@ -327,8 +343,11 @@ function snapToClosest() {
 
   $container.find('li').each(function () {
     const $li = $(this);
-    const liCenter = $li.position().left + $li.outerWidth() / 2;
-    const diff = Math.abs(containerCenter - liCenter);
+    const liRect = this.getBoundingClientRect();
+    const containerRect = $container[0].getBoundingClientRect();
+    const liCenter = liRect.left - containerRect.left + liRect.width / 2;
+
+    const diff = Math.abs(containerCenter - (scrollLeft + liCenter));
     if (diff < closestDiff) {
       closestDiff = diff;
       $closest = $li;
@@ -336,13 +355,17 @@ function snapToClosest() {
   });
 
   if ($closest) {
-    const liCenter = $closest.position().left + $closest.outerWidth() / 2;
+    const liRect = $closest[0].getBoundingClientRect();
+    const containerRect = $container[0].getBoundingClientRect();
+    const liCenter = liRect.left - containerRect.left + liRect.width / 2;
     const moveTo = scrollLeft + (liCenter - containerWidth / 2);
+
     $container.stop().animate({ scrollLeft: moveTo }, 300);
     $container.find('li').removeClass('selected');
     $closest.addClass('selected');
   }
 }
+
 
 
 // 티켓 스와이프 시 네비게이터 작동
