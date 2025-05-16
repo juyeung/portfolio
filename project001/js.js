@@ -212,12 +212,12 @@ $('.box').each(function () {
 // 예매티켓 클릭 시 필터 적용
 // 리스트 항목 클릭 시 회색 처리
 function isMobile() {
-  return window.innerWidth <= 1024; // 모바일/태블릿 기준
+  return window.innerWidth <= 1024;
 }
 
-// PC에서: 클릭한 티켓만 selected
+// PC 클릭 이벤트
 $('.listBox .list > li').on('click', function (e) {
-  if (isMobile()) return; // 모바일에서는 무시
+  if (isMobile()) return;
 
   if ($(this).hasClass('book')) return;
   e.stopPropagation();
@@ -238,7 +238,6 @@ $(document).on('click', function (e) {
 
   $(".listBox .list>li").removeClass("gray selected");
 });
-
 
 
 // 예매팝업
@@ -290,56 +289,60 @@ $(".pop .button").on("click", function () {
 });
 
 // 티켓 스와이프
-let scrollTimer;
-let currentIndex = 0;
-
 const $container = $('.ticket .list');
-const $tickets = $container.find('li');
+let isDragging = false;
+let startX, scrollLeft;
 
-function scrollToIndex(idx) {
-  const $target = $tickets.eq(idx);
-  const scrollLeft = $container.scrollLeft();
-  const containerWidth = $container.outerWidth();
-  const liCenter = $target.position().left + $target.outerWidth() / 2;
-  const moveTo = scrollLeft + (liCenter - containerWidth / 2);
+if (isMobile()) {
+  $container.on('touchstart mousedown', function (e) {
+    isDragging = true;
+    startX = e.pageX || e.originalEvent.touches[0].pageX;
+    scrollLeft = $container.scrollLeft();
+    $container.addClass('dragging');
+  });
 
-  $container.stop().animate({ scrollLeft: moveTo }, 300);
-  $tickets.removeClass('selected');
-  $target.addClass('selected');
-  currentIndex = idx;
+  $(document).on('touchmove mousemove', function (e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX || e.originalEvent.touches[0].pageX;
+    const walk = startX - x;
+    $container.scrollLeft(scrollLeft + walk);
+  });
+
+  $(document).on('touchend mouseup', function () {
+    if (!isDragging) return;
+    isDragging = false;
+    $container.removeClass('dragging');
+    snapToClosest();
+  });
 }
 
-$container.on('scroll', function () {
-  clearTimeout(scrollTimer);
-  scrollTimer = setTimeout(() => {
-    const scrollLeft = $container.scrollLeft();
-    const containerCenter = scrollLeft + $container.outerWidth() / 2;
+function snapToClosest() {
+  const scrollLeft = $container.scrollLeft();
+  const containerWidth = $container.outerWidth();
+  const containerCenter = scrollLeft + containerWidth / 2;
 
-    let closestDiff = Infinity;
-    let closestIdx = currentIndex;
+  let closestDiff = Infinity;
+  let $closest = null;
 
-    $tickets.each(function (i) {
-      const $li = $(this);
-      const liCenter = $li.position().left + $li.outerWidth() / 2;
-      const diff = Math.abs(containerCenter - liCenter);
-      if (diff < closestDiff) {
-        closestDiff = diff;
-        closestIdx = i;
-      }
-    });
+  $container.find('li').each(function () {
+    const $li = $(this);
+    const liCenter = $li.position().left + $li.outerWidth() / 2;
+    const diff = Math.abs(containerCenter - liCenter);
+    if (diff < closestDiff) {
+      closestDiff = diff;
+      $closest = $li;
+    }
+  });
 
-    // 인덱스 제한 (한칸 이상 차이나면 현재 인덱스 기준 +-1만 허용)
-    if (closestIdx > currentIndex + 1) closestIdx = currentIndex + 1;
-    if (closestIdx < currentIndex - 1) closestIdx = currentIndex - 1;
-    closestIdx = Math.max(0, Math.min(closestIdx, $tickets.length - 1));
-
-    scrollToIndex(closestIdx);
-  }, 100);
-});
-
-// 초기 선택 첫 번째 티켓
-scrollToIndex(0);
-
+  if ($closest) {
+    const liCenter = $closest.position().left + $closest.outerWidth() / 2;
+    const moveTo = scrollLeft + (liCenter - containerWidth / 2);
+    $container.stop().animate({ scrollLeft: moveTo }, 300);
+    $container.find('li').removeClass('selected');
+    $closest.addClass('selected');
+  }
+}
 
 
 // 티켓 스와이프 시 네비게이터 작동
@@ -439,33 +442,6 @@ $(".faq_list ul li .a").hide(); // 처음에 모든 답변 숨김
         $(this).html(newText);  // text()에서 html()로 변경
       });
     });
-
-    // 태블릿 모바일 예매티켓 리스트 드래그 슬라이드
-    let isDown = false;
-let startX;
-let scrollLeft;
-
-const $slider = $('.ticket .list');
-
-$slider.on('mousedown touchstart', function(e) {
-  isDown = true;
-  startX = e.pageX || e.originalEvent.touches[0].pageX;
-  scrollLeft = this.scrollLeft;
-  $(this).addClass('dragging');
-});
-
-$slider.on('mouseleave mouseup touchend', function() {
-  isDown = false;
-  $(this).removeClass('dragging');
-});
-
-$slider.on('mousemove touchmove', function(e) {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX || e.originalEvent.touches[0].pageX;
-  const walk = (x - startX) * 1.5;
-  this.scrollLeft = scrollLeft - walk;
-});
 
 // 테마존 아코디언 ##########################################
 $(function () {

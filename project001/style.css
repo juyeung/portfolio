@@ -2813,6 +2813,7 @@ footer {
     .listBox .list>li.gray {
         filter: none !important;
         opacity: 1 !important;
+        pointer-events: auto !important;
       }
 
     .ticket .listBox .list .book {
