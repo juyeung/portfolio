@@ -1432,7 +1432,6 @@ nav .menu ul li .title>p {
     max-width: 1440px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
     margin: 40px 0;
 }
 
@@ -2800,10 +2799,11 @@ footer {
         scroll-snap-type: x mandatory;
         gap: 16px;
         padding: 0 5%;
+        margin: 0;
     }
     .ticket .listBox .list>li{
         /* display: inline-block; */
-        margin: 0 24px;
+        margin: 32px 24px;
         /* margin-right: 20px; */
         flex-shrink: 0;
         scroll-snap-align: center;
@@ -2829,7 +2829,6 @@ footer {
         background: #ccc;
         border-radius: 50%;
         transition: background 0.3s;
-        cursor: pointer;
     }
     .ticket .dot.active {
         background: #3787ff;
