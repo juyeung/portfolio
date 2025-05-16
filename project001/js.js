@@ -299,7 +299,7 @@ $(".pop .button").on("click", function () {
 });
 
 function isMobile() {
-  return window.innerWidth <= 1024;
+  return window.innerWidth <= 1439;
 }
 
 const $container = $('.ticket .list');
@@ -323,7 +323,7 @@ $(document).on('touchmove mousemove', function (e) {
   const x = e.pageX || (e.originalEvent.touches && e.originalEvent.touches[0].pageX);
   if (x === undefined) return;
 
-  const walk = startX - x;
+  const walk = startX - x * 0.7;
   $container.scrollLeft(scrollLeft + walk);
 
   // 모바일 터치 스크롤 막기
