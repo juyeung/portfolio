@@ -1462,6 +1462,9 @@ nav .menu ul li .title>p {
     -webkit-background-clip: text;
     color: transparent;
 }
+.tsBox {
+    display: none;
+}
 
 /* normal ################################################################## */
 .ticket .listBox .list .normal {}
@@ -2787,28 +2790,20 @@ footer {
     .ticket .listBox {
         justify-content: flex-start;
         overflow: hidden;
+        position: relative;
     }
     .ticket .listBox .list {
         /* width: auto; */
         display: flex;
-        /* flex-wrap: nowrap; */
-        white-space: nowrap;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: none;
+        transition: transform 0.5s ease;
+        width: auto; /* 티켓 개수에 맞춰 늘려주세요 */
         gap: 16px;
         padding: 0 5%;
         margin: 0;
     }
     .ticket .listBox .list>li{
-        /* display: inline-block; */
         margin: 32px 24px;
-        /* margin-right: 20px; */
-        flex-shrink: 0;
-        scroll-snap-align: center;
-        width: 300px; /* 필요 시 조정 */
-        transition: transform 0.3s ease;
+        width: 300px;
     }
     .listBox .list>li.gray {
         filter: none !important;
@@ -2834,6 +2829,20 @@ footer {
     .ticket .dot.active {
         background: #3787ff;
     }
+    .tsBox {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 460px;
+        position: absolute;
+        left: 0;
+        margin: 32px 0;
+    }
+    .ts {
+        width: 20%;
+        height: 100%;
+        /* background-color: #1e90ff; */
+    }
     .book_m {
         display: flex;
         padding: 0 5%;
@@ -2841,7 +2850,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    .book_m .ticBox {
+    /* .book_m .ticBox {
         width: 100%;
     }
     .book_m .ticBox ul {
@@ -2871,7 +2880,7 @@ footer {
     }
     .book_m .ticBox .tic03.on {
         background-color: #A15FE4;
-    }
+    } */
     .book_m .date {
         width: 100%;
     }
