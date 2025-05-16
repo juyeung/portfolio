@@ -1433,7 +1433,7 @@ nav .menu ul li .title>p {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    margin-top: 40px;
+    margin: 40px 0;
 }
 
 .ticket .listBox .list>li {
@@ -1762,9 +1762,9 @@ nav .menu ul li .title>p {
 }
 .ticket .listBox .list .book .date .title p {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 600;
     font-family: "inter";
-    padding-left: 16px;
+    margin-left: 8px;
 }
 
 /* 달력 스타일 ################################################# */
@@ -1793,9 +1793,9 @@ nav .menu ul li .title>p {
 
 .book .people .title p {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 600;
     font-family: "Inter";
-    padding-left: 16px;
+    margin-left: 8px;
 }
 
 .book .people>ul {
@@ -1943,7 +1943,7 @@ nav .menu ul li .title>p {
     display: none;
     position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%; height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
@@ -1951,7 +1951,7 @@ nav .menu ul li .title>p {
     background: #fff;
     padding: 20px;
     margin: 300px auto;
-    width: 300px;
+    width: 260px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -1963,18 +1963,24 @@ nav .menu ul li .title>p {
 }
 .pop_box>p {
     font-size: 16px;
+    margin-top: 8px;
 }
 .pop_box .pop_date {
     display: flex;
-    justify-content: center;
     margin-top: 20px;
+}
+.pop_box .pop_date p:nth-child(2) {
+    margin-left: 8px;
 }
 .pop_box .pop_people {
     display: flex;
-    justify-content: center;
+}
+.pop_box .pop_people P:nth-child(2) {
+    margin-left: 8px;
 }
 .pop_box .button {
     width: 200px;
+    margin-top: 16px;
 }
 
 /* 오시는길 ################################################################# */
@@ -2735,13 +2741,15 @@ footer {
     .ticket {
         width: 100%;
         height: auto;
-        padding: 80px 5%;
+        padding: 60px 0;
         box-sizing: border-box;
     }
     .ticket .title_inner {
         display: flex;
         flex-direction: column;
         width: 100%;
+        padding: 0 5%;
+        box-sizing: border-box;
     }
     .ticket .title_inner h2 {
         width: 100%;
@@ -2779,12 +2787,23 @@ footer {
     }
     .ticket .listBox {
         justify-content: flex-start;
+        overflow: hidden;
     }
     .ticket .listBox .list {
-        width: auto;
+        /* width: auto; */
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding: 0 5%;
     }
     .ticket .listBox .list>li{
         margin: 0 24px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        width: 300px; /* 필요 시 조정 */
     }
     .ticket .listBox .list .book {
         display: none;
@@ -2793,7 +2812,6 @@ footer {
         display: flex;
         justify-content: center;
         gap: 8px;
-        margin: 32px 0;
     }
     .ticket .dot {
         width: 8px;
@@ -2807,9 +2825,17 @@ footer {
         background: #3787ff;
     }
     .book_m {
-        display: block;
+        display: flex;
+        padding: 0 5%;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+    }
+    .book_m .date {
+        width: 100%;
     }
     .book_m .date .title {
+        width: 100%;
         display: flex;
         margin-top: 20px;
         align-items: center;
@@ -2820,15 +2846,15 @@ footer {
     }
     .book_m .date .title p {
         font-size: 16px;
-    font-weight: normal;
-    font-family: "inter";
-    padding-left: 16px;
+        font-weight: 600;
+        font-family: "inter";
+        padding-left: 8px;
     }
     .book_m input {
         margin-top: 16px;
         border: 1px solid #e3e3e3;
         border-radius: 5px;
-        width: 260px;
+        width: 100%;
         height: 32px;
         background-color: #fff;
         color: #3a3a3a;
@@ -2842,7 +2868,7 @@ footer {
     }
     .book_m .people .title {
         display: flex;
-        margin-top: 44px;
+        margin-top: 32px;
         align-items: center;
     }
     .book_m .people .title img {
@@ -2852,9 +2878,9 @@ footer {
     
     .book_m .people .title p {
         font-size: 16px;
-        font-weight: normal;
+        font-weight: 600;
         font-family: "Inter";
-        padding-left: 16px;
+        margin-left: 8px;
     }
     .book_m .people ul {
         width: 100%;
@@ -2875,6 +2901,7 @@ footer {
         font-size: 16px;
         font-weight: normal;
         font-family: "Inter";
+        padding: 4px 0;
     }
     
     .book_m .people ul li .box {
@@ -2908,9 +2935,12 @@ footer {
     }
     .book_m .button {
         width: 260px;
+        margin-top: 32px;
     }
     .ticket .textBox {
-        margin: 0;
+        margin: 32px 0;
+        padding: 0 5%;
+        box-sizing: border-box;
     }
     /* 오시는길 */
     .way {
