@@ -291,57 +291,55 @@ $(".pop .button").on("click", function () {
 
 // 티켓 스와이프
 let scrollTimer;
+let currentIndex = 0;
 
-$('.ticket .list').on('scroll', function () {
+const $container = $('.ticket .list');
+const $tickets = $container.find('li');
+
+function scrollToIndex(idx) {
+  const $target = $tickets.eq(idx);
+  const scrollLeft = $container.scrollLeft();
+  const containerWidth = $container.outerWidth();
+  const liCenter = $target.position().left + $target.outerWidth() / 2;
+  const moveTo = scrollLeft + (liCenter - containerWidth / 2);
+
+  $container.stop().animate({ scrollLeft: moveTo }, 300);
+  $tickets.removeClass('selected');
+  $target.addClass('selected');
+  currentIndex = idx;
+}
+
+$container.on('scroll', function () {
   clearTimeout(scrollTimer);
-
-  scrollTimer = setTimeout(function () {
-    const $container = $('.ticket .list');
+  scrollTimer = setTimeout(() => {
     const scrollLeft = $container.scrollLeft();
-    const containerWidth = $container.outerWidth();
-    const containerCenter = scrollLeft + containerWidth / 2;
+    const containerCenter = scrollLeft + $container.outerWidth() / 2;
 
     let closestDiff = Infinity;
-    let $closest = null;
+    let closestIdx = currentIndex;
 
-    $container.find('li').each(function () {
+    $tickets.each(function (i) {
       const $li = $(this);
-      const liLeft = $li.position().left;
-      const liCenter = liLeft + $li.outerWidth() / 2;
+      const liCenter = $li.position().left + $li.outerWidth() / 2;
       const diff = Math.abs(containerCenter - liCenter);
-
       if (diff < closestDiff) {
         closestDiff = diff;
-        $closest = $li;
+        closestIdx = i;
       }
     });
 
-    if ($closest) {
-      // 중앙 정렬: 현재 scrollLeft + (li 중심 - container 중심)
-      const liCenter = $closest.position().left + $closest.outerWidth() / 2;
-      const moveTo = scrollLeft + (liCenter - containerWidth / 2);
-      $container.stop().animate({ scrollLeft: moveTo }, 300);
+    // 인덱스 제한 (한칸 이상 차이나면 현재 인덱스 기준 +-1만 허용)
+    if (closestIdx > currentIndex + 1) closestIdx = currentIndex + 1;
+    if (closestIdx < currentIndex - 1) closestIdx = currentIndex - 1;
+    closestIdx = Math.max(0, Math.min(closestIdx, $tickets.length - 1));
 
-      // 선택 클래스 처리
-      $container.find('li').removeClass('selected');
-      $closest.addClass('selected');
-
-      if ($closest) {
-        const liCenter = $closest.position().left + $closest.outerWidth() / 2;
-        const moveTo = scrollLeft + (liCenter - containerWidth / 2);
-      
-        $container.stop().animate({ scrollLeft: moveTo }, 300);
-      
-        // 모바일일 경우 자동 선택 처리
-        if (isMobile()) {
-          $container.find('li').removeClass('selected');
-          $closest.addClass('selected');
-        }
-      }
-      
-    }
-  }, 100); // 스크롤 멈춘 뒤 100ms 후 작동
+    scrollToIndex(closestIdx);
+  }, 100);
 });
+
+// 초기 선택 첫 번째 티켓
+scrollToIndex(0);
+
 
 
 // 티켓 스와이프 시 네비게이터 작동
