@@ -2814,7 +2814,7 @@ footer {
         filter: none !important;
         opacity: 1 !important;
         pointer-events: auto !important;
-      }
+    }
 
     .ticket .listBox .list .book {
         display: none;
@@ -2840,6 +2840,37 @@ footer {
         box-sizing: border-box;
         flex-direction: column;
         align-items: center;
+    }
+    .book_m .ticBox {
+        width: 100%;
+    }
+    .book_m .ticBox ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+    }
+    .book_m .ticBox li {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 600;
+        font-family: "inter";
+        margin: 0 20px;
+    }
+    .book_m .ticBox .tic01.on {
+        background-color: #26D8E3;
+    }
+    .book_m .ticBox .tic02.on {
+        background-color: #649ADE;
+    }
+    .book_m .ticBox .tic03.on {
+        background-color: #A15FE4;
     }
     .book_m .date {
         width: 100%;

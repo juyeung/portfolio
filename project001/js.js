@@ -190,35 +190,34 @@ $(".story .dot").on("click", function() {
   updateSlide(current);
 });
 
-// 예매 인원 수 카운트
+// 인원 수 카운트
 $('.box').each(function () {
   const $box = $(this);
   const $count = $box.find('.count');
 
   $box.find('.plus').click(function () {
-      let value = parseInt($count.text());
-      value++;
-      $count.text(value);
+    let value = parseInt($count.text());
+    value++;
+    $count.text(value);
   });
 
   $box.find('.minus').click(function () {
-      let value = parseInt($count.text());
-      if (value > 0) {
-          value--;
-          $count.text(value);
-      }
+    let value = parseInt($count.text());
+    if (value > 0) {
+      value--;
+      $count.text(value);
+    }
   });
 });
-// 예매티켓 클릭 시 필터 적용
-// 리스트 항목 클릭 시 회색 처리
+
+// PC / 모바일 구분 함수
 function isMobile() {
   return window.innerWidth <= 1439;
 }
 
-// PC 클릭 이벤트
+// ✅ PC: 리스트 티켓 클릭 시 선택
 $('.listBox .list > li').on('click', function (e) {
   if (isMobile()) return;
-
   if ($(this).hasClass('book')) return;
   e.stopPropagation();
 
@@ -229,29 +228,49 @@ $('.listBox .list > li').on('click', function (e) {
   $(this).addClass('selected').removeClass('gray');
 });
 
-// 바깥 클릭 시 초기화 (PC 전용)
+// ✅ PC: 바깥 클릭 시 초기화
 $(document).on('click', function (e) {
   if (isMobile()) return;
-
   const $target = $(e.target);
   if ($target.closest(".book").length || $target.closest(".listBox .list>li").length) return;
 
   $(".listBox .list>li").removeClass("gray selected");
 });
 
+// ✅ 모바일: ticBox 이용권 선택 처리
+$('.book_m .ticBox li').on('click', function () {
+  $('.book_m .ticBox li').removeClass('on');
+  $(this).addClass('on');
+});
 
-// 예매팝업
+// ✅ 팝업 오픈
 $(".book .button, .book_m .button").on("click", function () {
-  const $selectedTicket = $(".listBox .list li.selected");
-  
-  // 클릭된 버튼이 포함된 영역에서 datepicker 값을 정확히 가져오기
-  const selectedDate = $(this).closest(".book, .book_m").find("input[type='text']").val();
+  const $form = $(this).closest(".book, .book_m");
+  const selectedDate = $form.find("input[type='text']").val();
 
   let totalCount = 0;
-
-  $(this).closest(".book, .book_m").find(".people .count").each(function () {
+  $form.find(".people .count").each(function () {
     totalCount += parseInt($(this).text());
   });
+
+  let ticketName = "";
+  if (isMobile()) {
+    const $selected = $form.find(".ticBox li.on");
+    if ($selected.length === 0) {
+      alert("이용권을 선택해주세요");
+      return;
+    }
+    const idx = $selected.index();
+    ticketName = ["일반이용권", "연간이용권", "단체이용권"][idx];
+  } else {
+    const $selected = $(".listBox .list li.selected");
+    if ($selected.length === 0) {
+      alert("이용권을 선택해주세요");
+      return;
+    }
+    const idx = $(".listBox .list li").index($selected);
+    ticketName = ["일반이용권", "연간이용권", "단체이용권"][idx];
+  }
 
   const $pop = $(".pop");
   const $title = $pop.find("h4");
@@ -259,21 +278,12 @@ $(".book .button, .book_m .button").on("click", function () {
   const $dateText = $pop.find(".pop_date p").eq(1);
   const $peopleText = $pop.find(".pop_people p").eq(1);
 
-  if ($selectedTicket.length === 0) {
-    $title.text("이용권을 선택해주세요");
-    $message.text("");
-    $dateText.text("");
-    $peopleText.text("");
-  } else if (!selectedDate || totalCount === 0) {
+  if (!selectedDate || totalCount === 0) {
     $title.text("입력 정보가 부족합니다");
     $message.text("날짜와 인원을 모두 선택해주세요.");
     $dateText.text("");
     $peopleText.text("");
   } else {
-    const index = $(".listBox .list li").index($selectedTicket);
-    const ticketNames = ["일반이용권", "연간이용권", "단체이용권"];
-    const ticketName = ticketNames[index];
-
     $title.text(ticketName);
     $message.text("예매되었습니다.");
     $dateText.text(selectedDate);
@@ -288,26 +298,25 @@ $(".pop .button").on("click", function () {
   $(".pop").fadeOut();
 });
 
-// 티켓 스와이프
 function isMobile() {
-  return window.innerWidth <= 1439; // 필요 시 값 조절하세요
+  return window.innerWidth <= 1024;
 }
 
 const $container = $('.ticket .list');
+const $dots = $('.ticket .dot');
 let isDragging = false;
 let startX, scrollLeft;
 
-// 터치/마우스 드래그 시작
+// 드래그 시작
 $container.on('touchstart mousedown', function (e) {
-  if (!isMobile()) return; // 모바일에서만 동작
-
+  if (!isMobile()) return;
   isDragging = true;
   startX = e.pageX || e.originalEvent.touches[0].pageX;
   scrollLeft = $container.scrollLeft();
   $container.addClass('dragging');
 });
 
-// 터치/마우스 드래그 이동
+// 드래그 중
 $(document).on('touchmove mousemove', function (e) {
   if (!isDragging) return;
 
@@ -323,16 +332,15 @@ $(document).on('touchmove mousemove', function (e) {
   }
 });
 
-// 터치/마우스 드래그 종료
+// 드래그 종료
 $(document).on('touchend mouseup', function () {
   if (!isDragging) return;
-
   isDragging = false;
   $container.removeClass('dragging');
-  snapToClosest();
+  snapToClosest(); // 드래그 끝나면 가장 가까운 티켓으로 이동 + dot 갱신
 });
 
-// 가장 가까운 티켓으로 스냅 및 선택 처리 함수
+// 가장 가까운 티켓으로 스냅 이동 + 선택 + 네비게이터 dot 갱신
 function snapToClosest() {
   const scrollLeft = $container.scrollLeft();
   const containerWidth = $container.outerWidth();
@@ -360,33 +368,40 @@ function snapToClosest() {
     const liCenter = liRect.left - containerRect.left + liRect.width / 2;
     const moveTo = scrollLeft + (liCenter - containerWidth / 2);
 
-    $container.stop().animate({ scrollLeft: moveTo }, 300);
+    $container.stop().animate({ scrollLeft: moveTo }, 300, function () {
+      updateDot(); // 스냅 끝난 후 dot 갱신
+    });
+
     $container.find('li').removeClass('selected');
     $closest.addClass('selected');
   }
 }
 
+// 현재 스크롤 위치 기반으로 dot 표시 업데이트
+function updateDot() {
+  const itemWidth = $container.find('li').outerWidth(true); // 마진 포함
+  const scrollLeft = $container.scrollLeft();
+  const index = Math.round(scrollLeft / itemWidth);
 
+  $dots.removeClass('active');
+  $dots.eq(index).addClass('active');
+}
 
-// 티켓 스와이프 시 네비게이터 작동
-$(function() {
-  var $list = $('.ticket .list');
-  var $dots = $('.ticket .dot');
-  var itemWidth = $list.find('li').outerWidth(true); // margin 포함 너비
+// 일반적인 스크롤 (예: dot 클릭 등)에도 반응
+$container.on('scroll', function () {
+  updateDot();
+});
 
-  $list.on('scroll', function() {
-    var scrollLeft = $(this).scrollLeft();
-    var index = Math.round(scrollLeft / itemWidth);
-
-    $dots.removeClass('active');
-    $dots.eq(index).addClass('active');
-  });
-
-  $dots.on('click', function() {
-    var idx = $(this).index();
-    $list.animate({ scrollLeft: idx * itemWidth }, 300);
+// dot 클릭 시 해당 티켓 위치로 이동
+$dots.on('click', function () {
+  const idx = $(this).index();
+  const itemWidth = $container.find('li').outerWidth(true);
+  const moveTo = idx * itemWidth;
+  $container.stop().animate({ scrollLeft: moveTo }, 300, function () {
+    updateDot(); // dot 클릭 후에도 dot 상태 갱신
   });
 });
+
 
 
 // 갤러리 슬라이드
