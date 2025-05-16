@@ -783,8 +783,6 @@ footer p {
     position: absolute;
 }
 
-.navi.on {}
-
 .m_nav ul {
     list-style: none;
 }
@@ -910,7 +908,7 @@ footer p {
         display: none;
     }
     /* 햄버거아이콘 보이기 */
-    .m_nav.on {
+    .m_nav {
         display: block;
     }
     .wrap>div {
