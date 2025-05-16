@@ -279,8 +279,25 @@ $(".pop .button").on("click", function () {
   $(".pop").fadeOut();
 });
 
+// 티켓 스와이프 시 네비게이터 작동
+$(function() {
+  var $list = $('.ticket .list');
+  var $dots = $('.ticket .dot');
+  var itemWidth = $list.find('li').outerWidth(true); // margin 포함 너비
 
+  $list.on('scroll', function() {
+    var scrollLeft = $(this).scrollLeft();
+    var index = Math.round(scrollLeft / itemWidth);
 
+    $dots.removeClass('active');
+    $dots.eq(index).addClass('active');
+  });
+
+  $dots.on('click', function() {
+    var idx = $(this).index();
+    $list.animate({ scrollLeft: idx * itemWidth }, 300);
+  });
+});
 
 
 // 갤러리 슬라이드
