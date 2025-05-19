@@ -537,7 +537,9 @@ nav .menu ul li .title>p {
     width: 100%;
     padding: 0 5%;
     box-sizing: border-box;
+    position: relative;
 }
+.boadnavi {}
 
 .boad .con_box .title_inner {
     width: 100%;
@@ -646,10 +648,10 @@ nav .menu ul li .title>p {
     white-space: nowrap;
 }
 
-.boad .con_box .list_box .listA>div li {
+.boad .con_box .list_box .listA .swiper-slide {
     margin-right: 20px;
-    width: 100%;
-    min-width: 324px;
+    /* width: 100%; */
+    width: 324px;
     height: 520px;
     padding: 16px;
     box-sizing: border-box;
@@ -660,10 +662,10 @@ nav .menu ul li .title>p {
     display: inline-block;
     vertical-align: top;
 }
-.boad .con_box .list_box .listA>div li>a {
-    width: 374px;
+.boad .con_box .list_box .listA>div .swiper-slide>a {
+    width: 100%;
 }
-.boad .con_box .list_box .listA>div li>a .imgBox {
+.boad .con_box .list_box .listA>div .swiper-slide>a .imgBox {
     display: flex;
     width: 100%;
     height: 220px;
@@ -675,11 +677,11 @@ nav .menu ul li .title>p {
     margin-bottom: 16px;
 }
 
-.boad .con_box .list_box .listA>div li>a .imgBox>img {
+.boad .con_box .list_box .listA>div .swiper-slide>a .imgBox>img {
     width: 100%;
 }
 
-.boad .con_box .list_box .listA>div li>a {
+.boad .con_box .list_box .listA>div .swiper-slide>a {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -888,7 +890,7 @@ nav .menu ul li .title>p {
     background-image: url(img/story_bg.png);
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 60px 5%;
+    padding: 80px 5%;
     display: none;
     overflow: hidden;
 }
@@ -899,12 +901,11 @@ nav .menu ul li .title>p {
 .story_02 .title_inner h2 {
     width: 100%;
     color: #3a3a3a;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: normal;
     font-family: "Black Han Sans", serif;
     line-height: 40px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding-top: 4px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 .story_02 .slides {
     display: flex;
@@ -934,11 +935,11 @@ nav .menu ul li .title>p {
     width: 90vw;
 }
 .story_02 .text span {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
 }
 .story_02 .text h3 {
-    font-size: 48px;
+    font-size: 36px;
     font-family: "Jua", serif;
     font-weight: normal;
     margin-top: 16px;
@@ -990,7 +991,7 @@ nav .menu ul li .title>p {
     min-height: 1300px;
     height: 100vh;
     padding: 80px 5%;
-    margin: 60px 0;
+    margin: 80px 0;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -1263,11 +1264,11 @@ nav .menu ul li .title>p {
 .theme_02 .title_inner h2 {
     width: 100%;
     color: #3a3a3a;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: normal;
     font-family: "Black Han Sans", serif;
     line-height: 40px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     padding-top: 4px;
 }
 .theme_02 .title_inner .sub {
@@ -1378,10 +1379,26 @@ nav .menu ul li .title>p {
 }
 .theme_02 .pro ul li.on {}
 
+.theme_02 .more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.theme_02 .more ul {
+    margin: 16px;
+}
+.theme_02 .more ul li {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 8px 0;
+}
+
 /* 예매하기 #################################################################### */
 .ticket {
     width: 100%;
-    padding: 60px 5%;
+    padding: 80px 5%;
     height: 1024px;
     box-sizing: border-box;
 }
@@ -1994,7 +2011,7 @@ nav .menu ul li .title>p {
     width: 100%;
     height: 1000px;
     position: relative;
-    padding: 60px 5%;
+    padding: 80px 5%;
     display: flex;
 }
 
@@ -2057,6 +2074,7 @@ nav .menu ul li .title>p {
 }
 
 .way .title_inner .sub .link_btn {
+    width: 100%;
     display: flex;
 }
 
@@ -2176,10 +2194,6 @@ nav .menu ul li .title>p {
     overflow: hidden;
     border-bottom-left-radius: 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    /* position: absolute;
-    right: 0;
-    top: 0; */
-    background-color: #1e90ff;
 }
 .way .map iframe {
     width: 100%;
@@ -2192,7 +2206,7 @@ nav .menu ul li .title>p {
     background-color: #0B3067;
     display: flex;
     justify-content: center;
-    padding: 60px 5%;
+    padding: 80px 5%;
     box-sizing: border-box;
 }
 
@@ -2489,7 +2503,7 @@ nav .menu ul li .title>p {
     background-color: #000;
     color: #fff;
     position: relative;
-    padding: 60px 5%;
+    padding: 80px 5%;
     box-sizing: border-box;
 }
 
@@ -2529,6 +2543,35 @@ nav .menu ul li .title>p {
     font-weight: normal;
     font-family: "Inter";
     text-align: center;
+}
+
+.faq .title_inner .faq_list .button {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.faq .title_inner .faq_list .button p {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Inter";
+    line-height: 1;
+    width: 160px;
+    height: 52px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #ddd;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq .title_inner .faq_list .button:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    color: #666;
 }
 
 .faq .title_inner .faq_list ul {
@@ -2652,6 +2695,9 @@ footer {
     .button {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     }
+    .button p {
+        font-size: 20px;
+    }
     /* header */
     .header .logo a .pc {
         display: none;
@@ -2679,7 +2725,7 @@ footer {
         bottom: 52px;
     }
     .landing .title_inner .title>h2 {
-        font-size: 36px;
+        font-size: 28px;
     }
     .landing .title_inner .title>p {
         font-size: 16px;
@@ -2712,20 +2758,17 @@ footer {
     }
 
     /* 공지사항 */
-    .boad {
-        margin-top: 60px;
-        margin-bottom: 60px;
+    .boad .swiper-slide {
+        margin-top: 16px;
     }
-    .list_box .leftbtn {
-        display: none;
-    }
-    .list_box .rightbtn {
-        display: none;
+    .boad>h2 {
+        font-size: 36px;
     }
     .title_box>ul>li {
         width: 50%;
     }
-
+    .boad .swiper-pagination {}
+    
     /* 애니멀스토리 */
     .story {
         display: none;
@@ -2743,28 +2786,24 @@ footer {
     }
 
     /* 티켓예매 */
+    .bg_wave {
+        background-size: contain;
+    }
     .ticket {
         width: 100%;
         height: auto;
-        padding: 60px 0;
-        box-sizing: border-box;
     }
     .ticket .title_inner {
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding: 0 5%;
         box-sizing: border-box;
     }
     .ticket .title_inner h2 {
         width: 100%;
-        color: #3787ff;
-        font-size: 48px;
-        font-weight: normal;
-        font-family: "Black Han Sans", serif;
-        line-height: 40px;
-        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        padding-top: 4px;
+        font-size: 36px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        padding: 0;
     }
     .ticket .title_inner .sub {
         width: 100%;
@@ -2803,7 +2842,6 @@ footer {
         transition: transform 0.5s ease;
         width: auto; /* 티켓 개수에 맞춰 늘려주세요 */
         gap: 16px;
-        padding: 0 5%;
         margin: 0;
     }
     .ticket .listBox .list>li{
@@ -2850,7 +2888,6 @@ footer {
     }
     .book_m {
         display: flex;
-        padding: 0 5%;
         box-sizing: border-box;
         flex-direction: column;
         align-items: center;
@@ -2879,7 +2916,7 @@ footer {
         border: 1px solid #e3e3e3;
         border-radius: 5px;
         width: 100%;
-        height: 32px;
+        height: 40px;
         background-color: #fff;
         color: #3a3a3a;
         font-size: 16px;
@@ -2934,7 +2971,7 @@ footer {
         border-radius: 5px;
         background-color: #fff;
         width: 90%;
-        height: 32px;
+        height: 40px;
         justify-content: center;
         align-items: center;
         color: #3a3a3a;
@@ -2963,7 +3000,6 @@ footer {
     }
     .ticket .textBox {
         margin: 32px 0;
-        padding: 0 5%;
         box-sizing: border-box;
     }
 
@@ -2974,9 +3010,8 @@ footer {
     .way {
         width: 100%;
         height: auto;
-        padding: 60px 0;
-        box-sizing: border-box;
         flex-direction: column;
+        padding: 0;
     }
     .way .title_inner {
         display: flex;
@@ -2987,13 +3022,9 @@ footer {
     }
     .way .title_inner h2 {
         width: 100%;
-        color: #3787ff;
-        font-size: 48px;
-        font-weight: normal;
-        font-family: "Black Han Sans", serif;
-        line-height: 40px;
-        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        padding-top: 4px;
+        font-size: 36px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        padding: 0;
     }
     .way .title_inner .sub {
         width: 100%;
@@ -3046,14 +3077,15 @@ footer {
     /* 갤러리 */
     .gallery {
         height: auto;
-        padding: 60px 5%;
-        box-sizing: border-box;
         flex-direction: column;
     }
     .gallery .title_inner {
     }
     .gallery .title_inner h2 {
         width: 100%;
+        font-size: 36px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        padding: 0;
     }
     .gallery .table {
         margin-top: 40px;
@@ -3070,13 +3102,22 @@ footer {
     /* sns */
     .sns {
         background-position: center center;
-        height: 700px;
+        height: 600px;
     }
     .sns .sns_bg {
         height: 100%;
     }
     .sns .sns_bg .title {
         margin-top: 160px;
+    }
+    .sns .sns_bg .title>h2 {
+        width: 100%;
+        font-size: 36px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        padding: 0;
+    }
+    .sns .sns_bg .title>p {
+        font-size: 20px;
     }
     .snslink {
         display: flex;
@@ -3092,13 +3133,21 @@ footer {
     .faq .title_inner {
         flex-direction: column;
     }
+    .faq .title_inner h2 {
+        font-size: 36px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        padding: 0;
+    }
     .faq .title_inner .faq_list {
         width: 100%;
         margin: 0;
         order: 0;
     }
     .faq .title_inner .faq_list .more {
-        justify-content: center;
+        display: none;
+    }
+    .faq .title_inner .faq_list .button {
+        display: flex;
         margin: 40px 0;
         order: 1;
     }

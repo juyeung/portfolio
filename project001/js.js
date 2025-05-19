@@ -124,6 +124,47 @@ $('.leftbtn').click(function () {
     }
 });
 
+// 공지사항 반응형 슬라이드
+if (isMobile()) {
+  $(".listA > div").each(function (i) {
+    const $div = $(this);
+    const $ul = $div.find("ul");
+
+    const slides = $ul.find("li").map(function () {
+      const content = $(this).html();
+      return `<div class="swiper-slide">${content}</div>`;
+    }).get().join("");
+
+    // 새로운 Swiper 구조로 교체
+    const swiperHtml = `
+      <div class="swiper boad-swiper-${i}">
+        <div class="swiper-wrapper">${slides}</div>
+      </div>
+    `;
+
+    $ul.replaceWith(swiperHtml);
+
+    // 각 리스트별로 개별 dot 영역 생성
+    $(".boadnavi").append(`<div class="swiper-pagination swiper-pagination-${i}"></div>`);
+
+    // Swiper 초기화
+    new Swiper(`.boad-swiper-${i}`, {
+      slidesPerView: 1.1,
+      spaceBetween: 16,
+      centeredSlides: true,
+      pagination: {
+        el: `.swiper-pagination-${i}`,
+        clickable: true,
+      }
+    });
+  });
+
+  // 버튼 숨기기
+  $(".leftbtn, .rightbtn").hide();
+}
+
+
+
   // gnb 아이콘 클릭 시 menu 가 나타나라
   $('.gnb').click(function(){
     $('nav').addClass('on')
@@ -189,6 +230,28 @@ $(".story .dot").on("click", function() {
   current = index;
   updateSlide(current);
 });
+
+// 동물이야기 반응형 슬라이드
+if (isMobile()) {
+  const imgSwiper = new Swiper('.story02-img-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    pagination: {
+      el: '.story02-pagination',
+      clickable: true,
+    },
+  });
+
+  const textSwiper = new Swiper('.story02-text-swiper', {
+    slidesPerView: 1,
+    allowTouchMove: false, // 텍스트는 자동으로만 변경
+  });
+
+  // 이미지 슬라이드 바뀔 때 텍스트도 같이 바뀜
+  imgSwiper.on('slideChange', function () {
+    textSwiper.slideTo(imgSwiper.activeIndex);
+  });
+}
 
 // 인원 수 카운트
 $('.box').each(function () {
