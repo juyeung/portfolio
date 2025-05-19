@@ -1239,6 +1239,7 @@ nav .menu ul li .title>p {
 
 
 .bg_wave {
+    width: 100%;
     background-image: url(img/bg_wave02.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -2322,7 +2323,6 @@ nav .menu ul li .title>p {
     height: 600px;
     background-color: rgba(255, 255, 255, 0.6);
     text-align: center;
-    margin-top: 40px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(40px);
     overflow: hidden;
@@ -2347,7 +2347,6 @@ nav .menu ul li .title>p {
     font-weight: normal;
     font-family: "Jua", serif;
 }
-
 .sns .sns_bg .listBox {
     width: 100%;
 }
@@ -2435,7 +2434,16 @@ nav .menu ul li .title>p {
     margin-right: 32px;
 }
 
-.sns .sns_bg .listBox li .snsicon {
+.snslink {
+    display: none;
+    width: 100%;
+    justify-content: center;
+}
+.snslink .snsicon {
+    margin: 0 20px;
+}
+
+.snsicon {
     display: flex;
     width: 80px;
     height: 80px;
@@ -2447,11 +2455,6 @@ nav .menu ul li .title>p {
     align-items: center;
     margin-right: 12px;
     box-sizing: border-box;
-}
-
-.sns .sns_bg .listBox .slider li .snsIcon img {
-    width: 48px;
-    height: 48px;
 }
 
 .sns .sns_bg .listBox .slider .tag {
@@ -2486,11 +2489,13 @@ nav .menu ul li .title>p {
     background-color: #000;
     color: #fff;
     position: relative;
+    padding: 60px 5%;
+    box-sizing: border-box;
 }
 
 .faq .title_inner {
+    width: 100%;
     display: flex;
-    padding: 80px 0;
     /* background-color: #A15FE4; */
 }
 
@@ -2519,11 +2524,7 @@ nav .menu ul li .title>p {
 
 .faq .title_inner .faq_list .more a {
     color: #ddd;
-    /* width: 48px;
-    height: 14px; */
     padding: 4px 8px;
-    /* border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 5px; */
     font-size: 14px;
     font-weight: normal;
     font-family: "Inter";
@@ -2605,7 +2606,7 @@ nav .menu ul li .title>p {
 .faq_list .call {
     display: flex;
     align-items: center;
-    padding-top: 40px;
+    margin-top: 40px;
 }
 
 .faq_list .call i {
@@ -3064,6 +3065,62 @@ footer {
     .gallery .table ul {
         width: 100%;
         margin: 0;
+    }
+
+    /* sns */
+    .sns {
+        background-position: center center;
+        height: 700px;
+    }
+    .sns .sns_bg {
+        height: 100%;
+    }
+    .sns .sns_bg .title {
+        margin-top: 160px;
+    }
+    .snslink {
+        display: flex;
+    }
+    .sns .listBox {
+        display: none;
+    }
+
+    /* faq */
+    .faq {
+        height: auto;
+    }
+    .faq .title_inner {
+        flex-direction: column;
+    }
+    .faq .title_inner .faq_list {
+        width: 100%;
+        margin: 0;
+        order: 0;
+    }
+    .faq .title_inner .faq_list .more {
+        justify-content: center;
+        margin: 40px 0;
+        order: 1;
+    }
+    .faq .title_inner .faq_list .more a {
+        font-size: 16px;
+        width: 140px;
+        height: 44px;
+        border: 1px solid #fff;
+        border-radius: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .faq .title_inner h2 {
+        width: 100%;
+    }
+    .faq .title_inner .imgBox {
+        display: none;
+    }
+    .faq_list .call {
+        margin: 16px 0;
+        order: -1;
     }
   }
 

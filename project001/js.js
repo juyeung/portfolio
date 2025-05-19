@@ -371,28 +371,10 @@ function startInfiniteSlide($ul, direction = 'up') {
   });
 }
 
-if (!isMobile()) {
-  $('.table_inner ul').each(function (i) {
-    const dir = (i === 1) ? 'down' : 'up';
-    startInfiniteSlide($(this), dir);
-  });
-}
-
-
-// 플리킹
-if (isMobile()) {
-  new Swiper('.gallery-swiper', {
-    slidesPerView: 1.2,
-    spaceBetween: 16,
-    loop: false,
-    centeredSlides: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-}
-
+$('.table_inner ul').each(function (i) {
+  const dir = (i === 1) ? 'down' : 'up';
+  startInfiniteSlide($(this), dir);
+});
 
 // faq 아코디언 스크립트
 $(".faq_list ul li .a").hide(); // 처음에 모든 답변 숨김
