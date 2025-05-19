@@ -739,10 +739,10 @@ nav .menu ul li .title>p {
     background-size: contain;
     padding: 80px 5%;
     padding-bottom: 0;
+    box-sizing: border-box;
     height: auto;
     display: flex;
     overflow: hidden;
-    margin: 60px 0;
 }
 .story .title_inner {
     display: flex;
@@ -890,7 +890,7 @@ nav .menu ul li .title>p {
     background-image: url(img/story_bg.png);
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 80px 5%;
+    padding: 60px 5%;
     display: none;
     overflow: hidden;
 }
@@ -928,7 +928,7 @@ nav .menu ul li .title>p {
 }
 .story_02 .textBox {
     display: flex;
-    width: calc(100vw * 4);
+    width: 90vw;
     justify-content: space-between;
 }
 .story_02 .textBox li {
@@ -991,7 +991,7 @@ nav .menu ul li .title>p {
     min-height: 1300px;
     height: 100vh;
     padding: 80px 5%;
-    margin: 80px 0;
+    margin-top: 80px;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -2693,7 +2693,7 @@ footer {
 
 /* 반응형 리사이징 */
 /* 태블릿 이하 */
-@media (max-width: 1439px) {
+@media (max-width: 1023px) {
     .button {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     }
@@ -2760,6 +2760,10 @@ footer {
     }
 
     /* 공지사항 */
+    .boad {
+        padding: 60px 0;
+        margin-bottom: 0;
+    }
     .boad .swiper-slide {
         margin-top: 16px;
     }
@@ -2794,6 +2798,7 @@ footer {
     .ticket {
         width: 100%;
         height: auto;
+        padding: 60px 5%;
     }
     .ticket .title_inner {
         display: flex;
@@ -2886,6 +2891,9 @@ footer {
     .ts {
         width: 20%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         /* background-color: #1e90ff; */
     }
     .book_m {
@@ -3013,7 +3021,7 @@ footer {
         width: 100%;
         height: auto;
         flex-direction: column;
-        padding: 0;
+        padding: 60px 0;
     }
     .way .title_inner {
         display: flex;
@@ -3080,6 +3088,7 @@ footer {
     .gallery {
         height: auto;
         flex-direction: column;
+        padding: 60px 5%;
     }
     .gallery .title_inner {
     }
@@ -3131,6 +3140,7 @@ footer {
     /* faq */
     .faq {
         height: auto;
+        padding: 60px 5%;
     }
     .faq .title_inner {
         flex-direction: column;
