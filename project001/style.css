@@ -2655,12 +2655,14 @@ nav .menu ul li .title>p {
 .faq_list .call i {
     font-size: 20px;
     margin-right: 8px;
+    color: #fff;
 }
 
 .faq_list .call p {
     font-size: 20px;
     font-weight: bold;
     font-family: "Inter";
+    color: #fff;
 }
 
 .faq .title_inner .imgBox {
