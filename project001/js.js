@@ -237,33 +237,6 @@ $(document).on('click', function (e) {
   $(".listBox .list>li").removeClass("gray selected");
 });
 
-// ✅ 모바일일 때만 ts 버튼으로 티켓 넘기기
-if (isMobile()) {
-  const $ticketList = $(".ticket .list > li").not(".book");
-  let currentIndex = 0;
-
-  function updateMobileTicketView() {
-    $ticketList.hide().removeClass("selected");
-    $ticketList.eq(currentIndex).show().addClass("selected");
-  }
-
-  updateMobileTicketView();
-
-  $(".ts.ts_left").on("click", function () {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateMobileTicketView();
-    }
-  });
-
-  $(".ts.ts_right").on("click", function () {
-    if (currentIndex < $ticketList.length - 1) {
-      currentIndex++;
-      updateMobileTicketView();
-    }
-  });
-}
-
 // ✅ 팝업 오픈
 $(".book .button, .book_m .button").on("click", function () {
   const $form = $(this).closest(".book, .book_m");
@@ -276,7 +249,7 @@ $(".book .button, .book_m .button").on("click", function () {
 
   let ticketName = "";
   if (isMobile()) {
-    const $selected = $form.find(".ticBox li.on");
+    const $selected = $(".ticket .list > li.selected"); // ✅ 현재 선택된 티켓
     if ($selected.length === 0) {
       alert("이용권을 선택해주세요");
       return;
@@ -319,110 +292,43 @@ $(".pop .button").on("click", function () {
   $(".pop").fadeOut();
 });
 
-function isMobile() {
-  return window.innerWidth <= 1439;
-}
+// 티켓 슬라이드
+if (isMobile()) {
+  const $ticketList = $(".ticket .list > li").not(".book");
+  const $dots = $(".ticket .navigator .dot"); // dot 요소 가져오기
+  let currentIndex = 0;
 
-const $container = $('.ticket .list');
-const $dots = $('.ticket .dot');
-let isDragging = false;
-let startX, scrollLeft;
+  function updateMobileTicketView() {
+    $ticketList.hide().removeClass("selected");
+    $ticketList.eq(currentIndex).show().addClass("selected");
 
-// 드래그 시작
-$container.on('touchstart mousedown', function (e) {
-  if (!isMobile()) return;
-  isDragging = true;
-  startX = e.pageX || e.originalEvent.touches[0].pageX;
-  scrollLeft = $container.scrollLeft();
-  $container.addClass('dragging');
-});
-
-// 드래그 중
-$(document).on('touchmove mousemove', function (e) {
-  if (!isDragging) return;
-
-  const x = e.pageX || (e.originalEvent.touches && e.originalEvent.touches[0].pageX);
-  if (x === undefined) return;
-
-  const walk = startX - x * 0.7;
-  $container.scrollLeft(scrollLeft + walk);
-
-  // 모바일 터치 스크롤 막기
-  if (e.type === "touchmove") {
-    e.preventDefault();
+    // ✅ dot도 함께 업데이트
+    $dots.removeClass("active");
+    $dots.eq(currentIndex).addClass("active");
   }
-});
 
-// 드래그 종료
-$(document).on('touchend mouseup', function () {
-  if (!isDragging) return;
-  isDragging = false;
-  $container.removeClass('dragging');
-  snapToClosest(); // 드래그 끝나면 가장 가까운 티켓으로 이동 + dot 갱신
-});
+  updateMobileTicketView();
 
-// 가장 가까운 티켓으로 스냅 이동 + 선택 + 네비게이터 dot 갱신
-function snapToClosest() {
-  const scrollLeft = $container.scrollLeft();
-  const containerWidth = $container.outerWidth();
-  const containerCenter = scrollLeft + containerWidth / 2;
-
-  let closestDiff = Infinity;
-  let $closest = null;
-
-  $container.find('li').each(function () {
-    const $li = $(this);
-    const liRect = this.getBoundingClientRect();
-    const containerRect = $container[0].getBoundingClientRect();
-    const liCenter = liRect.left - containerRect.left + liRect.width / 2;
-
-    const diff = Math.abs(containerCenter - (scrollLeft + liCenter));
-    if (diff < closestDiff) {
-      closestDiff = diff;
-      $closest = $li;
+  $(".ts.ts_left").on("click", function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateMobileTicketView();
     }
   });
 
-  if ($closest) {
-    const liRect = $closest[0].getBoundingClientRect();
-    const containerRect = $container[0].getBoundingClientRect();
-    const liCenter = liRect.left - containerRect.left + liRect.width / 2;
-    const moveTo = scrollLeft + (liCenter - containerWidth / 2);
-
-    $container.stop().animate({ scrollLeft: moveTo }, 300, function () {
-      updateDot(); // 스냅 끝난 후 dot 갱신
-    });
-
-    $container.find('li').removeClass('selected');
-    $closest.addClass('selected');
-  }
-}
-
-// 현재 스크롤 위치 기반으로 dot 표시 업데이트
-function updateDot() {
-  const itemWidth = $container.find('li').outerWidth(true); // 마진 포함
-  const scrollLeft = $container.scrollLeft();
-  const index = Math.round(scrollLeft / itemWidth);
-
-  $dots.removeClass('active');
-  $dots.eq(index).addClass('active');
-}
-
-// 일반적인 스크롤 (예: dot 클릭 등)에도 반응
-$container.on('scroll', function () {
-  updateDot();
-});
-
-// dot 클릭 시 해당 티켓 위치로 이동
-$dots.on('click', function () {
-  const idx = $(this).index();
-  const itemWidth = $container.find('li').outerWidth(true);
-  const moveTo = idx * itemWidth;
-  $container.stop().animate({ scrollLeft: moveTo }, 300, function () {
-    updateDot(); // dot 클릭 후에도 dot 상태 갱신
+  $(".ts.ts_right").on("click", function () {
+    if (currentIndex < $ticketList.length - 1) {
+      currentIndex++;
+      updateMobileTicketView();
+    }
   });
-});
 
+  // ✅ dot 클릭 시에도 연동되도록 추가
+  $dots.on("click", function () {
+    currentIndex = $(this).index();
+    updateMobileTicketView();
+  });
+}
 
 
 // 갤러리 슬라이드
@@ -465,10 +371,28 @@ function startInfiniteSlide($ul, direction = 'up') {
   });
 }
 
-$('.table_inner ul').each(function (i) {
-  const dir = (i === 1) ? 'down' : 'up';
-  startInfiniteSlide($(this), dir);
-});
+if (!isMobile()) {
+  $('.table_inner ul').each(function (i) {
+    const dir = (i === 1) ? 'down' : 'up';
+    startInfiniteSlide($(this), dir);
+  });
+}
+
+
+// 플리킹
+if (isMobile()) {
+  new Swiper('.gallery-swiper', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    loop: false,
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+}
+
 
 // faq 아코디언 스크립트
 $(".faq_list ul li .a").hide(); // 처음에 모든 답변 숨김
