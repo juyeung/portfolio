@@ -2693,7 +2693,7 @@ footer {
 
 /* 반응형 리사이징 */
 /* 태블릿 이하 */
-@media (max-width: 1023px) {
+@media (max-width: 1439px) {
     .button {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     }
@@ -3187,6 +3187,7 @@ footer {
 
   /* 태블릿 */
   @media (max-width: 1024px) {
+
   }
   /* pc */
     @media (min-width: 1440px){
