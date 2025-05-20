@@ -277,6 +277,10 @@ nav .menu ul li .title>p {
     width: 100%;
     object-fit: cover;
 }
+.landing .video_bg>img {
+    width: 100%;
+    display: none;
+}
 .video_bg .title_bg {
     width: 100%;
     max-width: 1440px;
@@ -2749,6 +2753,12 @@ footer {
     .video_bg .title_bg p {
         font-size:64px;
         text-align: center;
+    }
+    video {
+        display: none;
+    }
+    .landing .video_bg>img {
+        display: block;
     }
     .scroll_line {
         top: auto;
