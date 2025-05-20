@@ -97,20 +97,19 @@ nav.on{
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     z-index: 1000;
     opacity: 1;
+    padding: 0 5%;
+    box-sizing: border-box;
 }
 /* 닫기 버튼 */
 nav .close {
     cursor: pointer;
-    position: absolute;
-    top: 28px;
-    right: 240px;
-    margin: 0 40px;
-    cursor: pointer;
-    transition: all 0.5s ease;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 nav .close img {
     transition: transform 0.5s ease;
@@ -120,9 +119,15 @@ nav .close img {
 nav .close:hover img {
     transform: rotate(180deg);
 }
-nav .menu {}
+nav .menu {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 nav .menu ul {
-    width: 800px;
+    width: 700px;
 }
 nav .menu ul li {
     color: #fff;
@@ -134,9 +139,6 @@ nav .menu ul li:hover .line {
 }
 nav .menu ul li:hover .title>p {
     color: #3787ff;
-}
-nav .menu ul li:hover .submenu p{
-    font-size: 24px;
 }
 .menu ul .line {
     transition: all 0.8s;
@@ -156,6 +158,7 @@ nav .menu ul li:hover .submenu p{
 nav .menu ul li .title {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 nav .menu ul li .title>p {
     font-size: 40px;
@@ -2011,13 +2014,16 @@ nav .menu ul li .title>p {
     width: 100%;
     height: 1000px;
     position: relative;
-    padding: 80px 5%;
+    padding: 80px 0;
     display: flex;
+
 }
 
 .way .title_inner {
     display: flex;
     width: 40%;
+    padding: 0 5%;
+    box-sizing: border-box;
 }
 
 .way .title_inner h2 {
@@ -2694,6 +2700,28 @@ footer {
 /* 반응형 리사이징 */
 /* 태블릿 이하 */
 @media (max-width: 1439px) {
+    nav .menu ul {
+        width: 100%;
+    }
+    nav .menu ul li {
+        margin: 8px 0;
+    }
+    nav .menu ul li .title {
+        align-items: flex-start;
+    }
+    nav .menu ul li .title>p {
+        font-size: 20px;
+        width: 50%;
+        padding: 8px 0;
+    }
+    .submenu {
+        flex-direction: column;
+    }
+    .submenu p {
+        margin: 0;
+        font-size: 16px;
+        padding: 8px 0;
+    }
     .button {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     }
