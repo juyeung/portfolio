@@ -266,11 +266,10 @@ nav .menu ul li .title>p {
     background-repeat: no-repeat;
     background-size: cover; */
     width: 100%;
-    height: 100vh;
     overflow: hidden;
 }
 .landing .video_bg {
-    height: 100%;
+    width: 100%;
     position: relative;
 }
 .landing .video_bg video {
@@ -283,14 +282,15 @@ nav .menu ul li .title>p {
 }
 .video_bg .title_bg {
     width: 100%;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 .video_bg .title_bg p {
-    font-size: 140px;
+    font-size: 10em;
     font-weight: 600;
     font-family: "Inter";
     color: rgba(255, 255, 255, 0.3);
@@ -548,24 +548,16 @@ nav .menu ul li .title>p {
 }
 .boadnavi {}
 
-.boad .con_box .title_inner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .title_box {
-    width: 100%;
-}
-
-.title_box>ul {
-    width: 100%;
+    width: 348px;
     display: flex;
+    margin-left: 80px;
 }
 
-.title_box>ul>li {
+.title_box li {
     display: flex;
     color: #c9c9c9;
+    font-weight: 600;
     border-bottom: solid 1px rgba(255, 255, 255, 0.4);
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
@@ -578,16 +570,17 @@ nav .menu ul li .title>p {
     cursor: pointer;
 }
 
-.title_box>ul>li.on {
+.title_box li.on {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-left: 1px solid rgba(255, 255, 255, 0.4);
     border-right: 1px solid rgba(255, 255, 255, 0.4);
     border-top: 1px solid rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
-    font-weight: bold;
     color: #fff;
     transition: all 0.5s;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
 }
 
 .list_box {
@@ -610,13 +603,11 @@ nav .menu ul li .title>p {
 .list_box .leftbtn i {
     color: #fff;
     font-size: 40px;
-    margin: 0 16px;
     cursor: pointer;
 }
 .list_box .rightbtn i {
     color: #fff;
     font-size: 40px;
-    margin: 0 16px;
     cursor: pointer;
 } 
 
@@ -2251,7 +2242,8 @@ nav .menu ul li .title>p {
 }
 
 .gallery .table ul {
-    width: 25%;
+    width: 30%;
+    max-width: 420px;
     margin: 0 8px;
     overflow: hidden;
     height: 100%;
@@ -2509,7 +2501,7 @@ nav .menu ul li .title>p {
 /* 자주하는질문 */
 .faq {
     width: 100%;
-    height: 800px;
+    height: auto;
     background-color: #000;
     color: #fff;
     position: relative;
@@ -2680,14 +2672,10 @@ nav .menu ul li .title>p {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .faq .title_inner .imgBox img {
     width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
 }
 
 /* footer ############################ */
@@ -2706,6 +2694,8 @@ footer {
 @media (max-width: 1439px) {
     nav .menu ul {
         width: 100%;
+        padding: 0 5%;
+        box-sizing: border-box;
     }
     nav .menu ul li {
         margin: 8px 0;
@@ -2751,7 +2741,7 @@ footer {
         height: 50vh;
     }
     .video_bg .title_bg p {
-        font-size:64px;
+        font-size: 10em;
         text-align: center;
     }
     video {
@@ -2808,7 +2798,11 @@ footer {
     .boad>h2 {
         font-size: 36px;
     }
-    .title_box>ul>li {
+    .title_box {
+        width: 100%;
+        margin: 0;
+    }
+    .title_box li {
         width: 50%;
     }
     .boad .swiper-pagination {}
@@ -3141,6 +3135,7 @@ footer {
     }
     .gallery .table .table_inner {
         flex-direction: column;
+        width: 420px;
         height: 800px;
     }
     .gallery .table ul {

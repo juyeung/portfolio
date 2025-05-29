@@ -62,10 +62,10 @@ $(document).ready(function(){
   });
 
   // 공지사항 이벤트 탭바 클릭시 리스트 출력
-  $('.con_box .title_box ul li').click(function(){
+  $('.con_box .title_box li').click(function(){
     // $('.con_box .list_box>div').removeClass('on')
     // $('.con_box .list_box>div').eq(1).addClass('on')
-    $('.con_box .title_box ul li').removeClass('on')
+    $('.con_box .title_box li').removeClass('on')
     $(this).addClass('on')
 
     // listA 하위 div(.notice, .event 등) on 토글
