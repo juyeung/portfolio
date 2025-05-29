@@ -648,8 +648,8 @@ nav .menu ul li .title>p {
 
 .boad .con_box .list_box .listA .swiper-slide {
     margin-right: 20px;
-    /* width: 100%; */
-    width: 324px;
+    width: 100%;
+    max-width: 324px;
     height: 520px;
     padding: 16px;
     box-sizing: border-box;
@@ -799,14 +799,15 @@ nav .menu ul li .title>p {
     z-index: 0;
 }
 .story .slide img {
-    width: auto;
-    height: 700px;
+    width: 100%;
+    max-height: 700px;
 }
 
 .story .story_body {
     flex: 1;
     position: relative;
     padding: 0 50px;
+    box-sizing: border-box;
     width: 50%;
     height: 100%;
     display: flex;
@@ -817,7 +818,7 @@ nav .menu ul li .title>p {
     position: absolute;
     bottom: -100%; /* 글자가 처음에는 아래로 시작 */
     left: 0;
-    width: 527px;
+    width: 100%;
     opacity: 0;
     transition: opacity 0.8s, transform 0.8s;
 }
@@ -2691,7 +2692,7 @@ footer {
 
 /* 반응형 리사이징 */
 /* 태블릿 이하 */
-@media (max-width: 1439px) {
+@media (max-width: 1024px) {
     nav .menu ul {
         width: 100%;
         padding: 0 5%;
@@ -2741,7 +2742,7 @@ footer {
         height: 50vh;
     }
     .video_bg .title_bg p {
-        font-size: 10em;
+        font-size: 4em;
         text-align: center;
     }
     video {
@@ -3218,12 +3219,8 @@ footer {
     }
   }
 
-  /* 태블릿 */
-  @media (max-width: 1024px) {
-
-  }
   /* pc */
-    @media (min-width: 1440px){
+    @media (min-width: 1025px){
         .landing {
             position: relative;
         }

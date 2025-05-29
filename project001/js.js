@@ -109,7 +109,7 @@ $('.rightbtn').click(function () {
     if (num < maxNum) {
         num++;
         $activeUl.stop().animate({
-            left: -394 * num + 'px' // 374px + 20px 마진 = 394
+            left: -344 * num + 'px' // 374px + 20px 마진 = 394
         }, 100);
     }
 });
@@ -275,7 +275,7 @@ $('.box').each(function () {
 
 // PC / 모바일 구분 함수
 function isMobile() {
-  return window.innerWidth <= 1439;
+  return window.innerWidth <= 1024;
 }
 
 // ✅ PC: 리스트 티켓 클릭 시 선택
