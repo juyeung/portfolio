@@ -2088,7 +2088,7 @@ nav .menu ul li .title>p {
 
 .way .title_inner .sub .textBox {
     width: 406px;
-    height: 588px;
+    height: auto;
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
     justify-content: center;
